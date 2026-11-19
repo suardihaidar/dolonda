@@ -24,29 +24,29 @@
 
 ## Stage 2 — Project Foundation
 
-- [ ] **TASK-03: Initialize Git Repository & Core Configuration**
+- [x] **TASK-03: Initialize Git Repository & Core Configuration**
   - **Prerequisites:** Founder sign-off on Stage 1.
   - **Details:** Initialize `git init`. Create comprehensive `.gitignore` for Node/Vite/macOS artifacts.
   - **Acceptance Criteria:** Git repository initialized; initial documentation committed with clean history.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
-- [ ] **TASK-04: Initialize Vite + React + TypeScript Project**
+- [x] **TASK-04: Initialize Vite + React + TypeScript Project**
   - **Prerequisites:** TASK-03.
   - **Details:** Scaffold React 18/19 with TypeScript via Vite. Configure `tsconfig.json` with strict mode enabled.
   - **Acceptance Criteria:** Clean Vite project structure created; zero initial TypeScript or build errors.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
-- [ ] **TASK-05: Configure Tailwind CSS & Design System Tokens**
+- [x] **TASK-05: Configure Tailwind CSS & Design System Tokens**
   - **Prerequisites:** TASK-04.
   - **Details:** Install Tailwind CSS, PostCSS, Autoprefixer. Configure `tailwind.config.js` with custom color tokens (`canvas`, `ink`, `lime`, `indigo`), custom font families (`Space Grotesk`, `Inter`, `JetBrains Mono`), and container widths. Configure Google Fonts preconnects in `index.html`.
   - **Acceptance Criteria:** Tailwind utility classes render custom colors and fonts accurately; verified via local dev server.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
-- [ ] **TASK-06: Scaffold Folder Structure & Typed Data Schemas**
+- [x] **TASK-06: Scaffold Folder Structure & Typed Data Schemas**
   - **Prerequisites:** TASK-05.
   - **Details:** Create directories: `src/components/layout`, `src/components/sections`, `src/components/ui`, `src/data`, `src/types`, `src/assets`. Create TypeScript interfaces (`Project`, `Service`, `TechItem`, `NavLink`) and typed static content files (`projects.ts`, `services.ts`, `techStack.ts`, `navigation.ts`, `contact.ts`).
   - **Acceptance Criteria:** All static content separated from JSX; TypeScript interfaces compile with strict types.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
 ---
 
