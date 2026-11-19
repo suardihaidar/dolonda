@@ -120,9 +120,25 @@ export const Contact: React.FC = () => {
               <Button
                 href={contactDetails.whatsappPlaceholder}
                 isExternal
-                variant="secondary"
+                variant="secondary-dark"
                 size="md"
-                className="w-full justify-center text-canvas border-white/20 hover:border-white hover:bg-white/10"
+                className="w-full justify-center"
+                icon={
+                  <svg
+                    className="w-4 h-4 text-canvas"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                }
               >
                 WhatsApp Chat
               </Button>

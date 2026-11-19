@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'lime';
+  variant?: 'primary' | 'secondary' | 'secondary-dark' | 'outline' | 'lime';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   isExternal?: boolean;
@@ -36,6 +36,8 @@ export const Button: React.FC<ButtonProps> = ({
       'bg-ink text-canvas hover:bg-ink/90 hover:-translate-y-0.5 active:translate-y-0 shadow-sm focus-visible:ring-ink',
     secondary:
       'bg-transparent text-ink border border-ink/20 hover:border-ink hover:bg-canvas-subtle hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-ink',
+    'secondary-dark':
+      'bg-transparent text-canvas border border-white/20 hover:border-white hover:bg-white/10 hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-lime-accent',
     outline:
       'bg-transparent text-ink border border-border-subtle hover:border-ink hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-ink',
     lime:
@@ -58,6 +60,7 @@ export const Button: React.FC<ButtonProps> = ({
         href={href}
         className={combinedClasses}
         {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
         {content}
       </a>
