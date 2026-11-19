@@ -52,7 +52,7 @@
 
 ## Stage 3 — Section-by-Section Implementation
 
-- [ ] **TASK-07: Implement Navigation Bar & Mobile Menu Drawer**
+- [x] **TASK-07: Implement Navigation Bar & Mobile Menu Drawer**
   - **Prerequisites:** TASK-06.
   - **Components:** `src/components/layout/Navbar.tsx`, `src/components/layout/MobileMenu.tsx`.
   - **Details:** Build sticky header with Dolonda wordmark, desktop navigation links, responsive mobile hamburger toggle, accessible slide-over/dropdown mobile menu, smooth anchor scrolling, and visible focus rings.
@@ -60,7 +60,7 @@
     - Desktop nav links navigate smoothly to `#home`, `#work`, `#services`, `#about`, `#contact`.
     - Mobile menu opens/closes smoothly, traps focus or closes on link click / ESC key.
     - Header background responds to scroll with backdrop blur.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
 - [ ] **TASK-08: Implement Hero Section**
   - **Prerequisites:** TASK-07.
