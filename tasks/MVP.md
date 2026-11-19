@@ -114,7 +114,7 @@
     - Subtle hover states with `JetBrains Mono` labels.
   - **Status:** COMPLETED.
 
-- [ ] **TASK-13: Implement Contact Section**
+- [x] **TASK-13: Implement Contact Section**
   - **Prerequisites:** TASK-12.
   - **Components:** `src/components/sections/Contact.tsx`.
   - **Details:** Build high-impact contact banner inviting project inquiries. Provide clear placeholders for `hello@dolonda.com`, WhatsApp direct chat, LinkedIn, and GitHub. Include quick "Copy Email" interaction.
@@ -122,7 +122,7 @@
     - Prominent headline and friendly guidance.
     - Placeholders clearly labeled and functional.
     - Working click-to-copy interaction for email placeholder.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
 - [ ] **TASK-14: Implement Footer & Root Assembly**
   - **Prerequisites:** TASK-13.
