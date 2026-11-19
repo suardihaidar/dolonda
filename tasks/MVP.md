@@ -95,7 +95,7 @@
     - No mention of backend or non-relevant services.
   - **Status:** COMPLETED.
 
-- [ ] **TASK-11: Implement About Section**
+- [x] **TASK-11: Implement About Section**
   - **Prerequisites:** TASK-10.
   - **Components:** `src/components/sections/About.tsx`.
   - **Details:** Present Suardi as founder/developer. Highlight >7 years software engineering experience, frontend background (React, React Native, TypeScript), and craft-first mindset. Editorial layout with pull quote or key stat callout.
@@ -103,7 +103,7 @@
     - Authentic, non-exaggerated copy.
     - Strict adherence to brief: no fabricated clients, awards, or former employer logos.
     - High-contrast readability.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
 - [ ] **TASK-12: Implement Technology Stack Section**
   - **Prerequisites:** TASK-11.
