@@ -62,7 +62,7 @@
     - Header background responds to scroll with backdrop blur.
   - **Status:** COMPLETED.
 
-- [ ] **TASK-08: Implement Hero Section**
+- [x] **TASK-08: Implement Hero Section**
   - **Prerequisites:** TASK-07.
   - **Components:** `src/components/sections/Hero.tsx`, `src/components/ui/Button.tsx`.
   - **Details:** Construct editorial Hero layout featuring headline: *"Building thoughtful digital experiences."*, authentic Suardi bio copy, primary CTA button (`Explore My Work` -> `#work`), secondary CTA button (`Let's Talk` -> `#contact`), and subtle editorial visual accents.
@@ -70,7 +70,7 @@
     - Space Grotesk headline renders with strong typographic hierarchy.
     - CTAs trigger smooth scroll to target anchors.
     - Fully responsive across mobile (320px) to wide desktop (1440px+).
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
 - [ ] **TASK-09: Implement Selected Work Section**
   - **Prerequisites:** TASK-08.
