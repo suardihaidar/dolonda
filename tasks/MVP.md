@@ -105,14 +105,14 @@
     - High-contrast readability.
   - **Status:** COMPLETED.
 
-- [ ] **TASK-12: Implement Technology Stack Section**
+- [x] **TASK-12: Implement Technology Stack Section**
   - **Prerequisites:** TASK-11.
   - **Components:** `src/components/sections/TechStack.tsx`, `src/components/ui/TechBadge.tsx`.
   - **Details:** Showcase vetted technologies: React, React Native, TypeScript, JavaScript, Tailwind CSS, HTML, CSS, Git, GitHub.
   - **Acceptance Criteria:**
     - Grid or flex-wrap layout of clean technical badges.
     - Subtle hover states with `JetBrains Mono` labels.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
 - [ ] **TASK-13: Implement Contact Section**
   - **Prerequisites:** TASK-12.
