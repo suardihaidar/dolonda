@@ -72,7 +72,7 @@
     - Fully responsive across mobile (320px) to wide desktop (1440px+).
   - **Status:** COMPLETED.
 
-- [ ] **TASK-09: Implement Selected Work Section**
+- [x] **TASK-09: Implement Selected Work Section**
   - **Prerequisites:** TASK-08.
   - **Components:** `src/components/sections/SelectedWork.tsx`, `src/components/ui/ProjectCard.tsx`.
   - **Details:** Render the two concept projects from `src/data/projects.ts`:
@@ -83,7 +83,7 @@
     - Rounded visual preview container with subtle hover interaction.
     - Tech stack pills rendered cleanly.
     - No broken images or broken links.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
 - [ ] **TASK-10: Implement Services Section**
   - **Prerequisites:** TASK-09.
