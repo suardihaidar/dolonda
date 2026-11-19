@@ -137,30 +137,30 @@
 
 ## Stage 4 — Quality & Refinement Audit
 
-- [ ] **TASK-15: Responsive & Cross-Browser Verification**
+- [x] **TASK-15: Responsive & Cross-Browser Verification**
   - **Prerequisites:** TASK-14.
   - **Details:** Test layout across 375px, 640px, 768px, 1024px, 1280px, and 1440px viewports. Confirm zero horizontal scrollbar overflow.
   - **Acceptance Criteria:** Zero layout breakage or clipped text across all viewports.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
-- [ ] **TASK-16: Accessibility & Usability Audit (WCAG AA)**
+- [x] **TASK-16: Accessibility & Usability Audit (WCAG AA)**
   - **Prerequisites:** TASK-15.
   - **Details:** Verify keyboard tab order, `focus-visible` styling, image `alt` texts, semantic headings hierarchy (`h1` -> `h2` -> `h3`), and `prefers-reduced-motion` compliance.
   - **Acceptance Criteria:** Complete keyboard navigability; WCAG 2.1 AA color contrast compliance verified.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
-- [ ] **TASK-17: SEO, Open Graph & Asset Optimization**
+- [x] **TASK-17: SEO, Open Graph & Asset Optimization**
   - **Prerequisites:** TASK-16.
   - **Details:** Configure title, meta description, favicon, Open Graph and Twitter Card tags in `index.html`. Compress and verify all visual assets.
   - **Acceptance Criteria:** High-fidelity social previews verified; Google Lighthouse score >= 95.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
 ---
 
 ## Stage 5 — Cloudflare Pages Deployment
 
-- [ ] **TASK-18: Cloudflare Pages Build Configuration & Verification**
+- [x] **TASK-18: Cloudflare Pages Build Configuration & Verification**
   - **Prerequisites:** TASK-17.
   - **Details:** Verify `npm run build` runs cleanly and generates static files in `dist/`. Document Cloudflare Pages dashboard setup instructions for repository connection.
   - **Acceptance Criteria:** Build succeeds with zero warnings; step-by-step connection guide prepared for founder.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
