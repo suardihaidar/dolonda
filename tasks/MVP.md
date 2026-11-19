@@ -124,14 +124,14 @@
     - Working click-to-copy interaction for email placeholder.
   - **Status:** COMPLETED.
 
-- [ ] **TASK-14: Implement Footer & Root Assembly**
+- [x] **TASK-14: Implement Footer & Root Assembly**
   - **Prerequisites:** TASK-13.
   - **Components:** `src/components/layout/Footer.tsx`, `src/App.tsx`.
   - **Details:** Render Dolonda wordmark, short brand statement, quick navigation links, social placeholders, and copyright notice (`© 2026 Dolonda. All rights reserved.`).
   - **Acceptance Criteria:**
     - Full single-page composition assembled seamlessly in `App.tsx`.
     - Footer completes the visual baseline of the page.
-  - **Status:** PENDING.
+  - **Status:** COMPLETED.
 
 ---
 

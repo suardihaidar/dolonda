@@ -6,6 +6,7 @@ import { Services } from './components/sections/Services';
 import { About } from './components/sections/About';
 import { TechStack } from './components/sections/TechStack';
 import { Contact } from './components/sections/Contact';
+import { Footer } from './components/layout/Footer';
 
 export const App: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ export const App: React.FC = () => {
       {/* 1. Navigation */}
       <Navbar />
 
-      {/* Main Content Sections */}
+      {/* Main Single-Page Sections */}
       <main className="flex-1 flex flex-col">
         {/* 2. Hero Section */}
         <Hero />
@@ -34,9 +35,8 @@ export const App: React.FC = () => {
         <Contact />
       </main>
 
-      <footer className="py-8 px-6 sm:px-8 md:px-12 border-t border-border-subtle text-center text-xs text-ink-subtle font-mono">
-        © 2026 Dolonda — Founder-led Creative Development
-      </footer>
+      {/* 8. Footer */}
+      <Footer />
     </div>
   );
 };
