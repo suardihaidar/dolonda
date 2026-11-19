@@ -45,8 +45,9 @@ The project documentation serves as the single source of truth for design, engin
 - **[docs/ARCHITECTURE.md](file:///Users/suard/Project/dolonda/docs/ARCHITECTURE.md):** Architectural decisions, component hierarchy, data flow, and trade-off analysis.
 - **[docs/DESIGN_SYSTEM.md](file:///Users/suard/Project/dolonda/docs/DESIGN_SYSTEM.md):** Color tokens, typography scales, layout grids, button styles, and motion rules.
 - **[tasks/MVP.md](file:///Users/suard/Project/dolonda/tasks/MVP.md):** Stage-by-stage development roadmap and atomic acceptance criteria.
-- **[tasks/BACKLOG.md](file:///tasks/BACKLOG.md):** Post-MVP backlog and future studio expansion initiatives.
-- **[docs/PROJECT_BRIEF.md](file:///Users/suard/Project/dolonda/docs/PROJECT_BRIEF.md):** Verbatim original project brief preserved as historical baseline.
+- [tasks/BACKLOG.md](file:///Users/suard/Project/dolonda/tasks/BACKLOG.md): Post-MVP backlog and future studio expansion initiatives.
+- [CHANGELOG.md](file:///Users/suard/Project/dolonda/CHANGELOG.md): Chronological record of all milestones and changes using commit identifiers.
+- [docs/PROJECT_BRIEF.md](file:///Users/suard/Project/dolonda/docs/PROJECT_BRIEF.md): Verbatim original project brief preserved as historical baseline.
 
 ---
 
