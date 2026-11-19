@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Hero } from './components/sections/Hero';
 import { SelectedWork } from './components/sections/SelectedWork';
+import { Services } from './components/sections/Services';
 
 export const App: React.FC = () => {
   return (
@@ -17,14 +18,12 @@ export const App: React.FC = () => {
         {/* 3. Selected Work Section */}
         <SelectedWork />
 
-        {/* Placeholder Sections for remaining stages */}
-        <section id="services" className="py-24 px-6 sm:px-8 md:px-12 max-w-container mx-auto w-full border-t border-border-subtle">
-          <span className="font-mono text-xs text-ink-subtle uppercase">Next: Section 04 — Services</span>
-          <h2 className="font-heading text-3xl font-bold text-ink mt-2">Services</h2>
-        </section>
+        {/* 4. Services Section */}
+        <Services />
 
+        {/* Placeholder Sections for remaining stages */}
         <section id="about" className="py-24 px-6 sm:px-8 md:px-12 max-w-container mx-auto w-full border-t border-border-subtle">
-          <span className="font-mono text-xs text-ink-subtle uppercase">Section 05</span>
+          <span className="font-mono text-xs text-ink-subtle uppercase">Next: Section 05 — About Suardi</span>
           <h2 className="font-heading text-3xl font-bold text-ink mt-2">About Suardi</h2>
         </section>
 
