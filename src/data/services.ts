@@ -3,38 +3,23 @@ import { ServiceItem } from '../types';
 export const services: ServiceItem[] = [
   {
     number: '01',
-    title: 'Website Development',
+    title: 'Website Architecture & Development',
     description:
-      'Designing and developing modern, responsive websites crafted to communicate your brand story with clarity and convert visitors into clients.',
-    capabilities: [
-      'Conversion-focused landing pages',
-      'Professional business websites',
-      'Mobile-first responsive architecture',
-      'Performance and SEO fundamentals',
-    ],
+      'From blank canvas to deployed production site. Responsive, accessible, and built on clean semantic HTML — not on templates.',
+    deliverables: ['Landing pages', 'Business websites', 'Mobile-first layouts', 'SEO fundamentals'],
   },
   {
     number: '02',
-    title: 'Frontend Development',
+    title: 'React & TypeScript Engineering',
     description:
-      'Translating design concepts and Figma files into clean, maintainable, and type-safe React applications built for longevity.',
-    capabilities: [
-      'React and TypeScript engineering',
-      'Pixel-perfect Figma-to-code implementation',
-      'Modular, reusable UI component systems',
-      'Clean state management and UI integration',
-    ],
+      'Figma files turned into strict-typed, maintainable React applications. Component systems designed for longevity, not quick delivery.',
+    deliverables: ['Figma-to-code', 'Component systems', 'State management', 'UI integration'],
   },
   {
     number: '03',
-    title: 'UI Improvements',
+    title: 'UI Triage & Craft Elevation',
     description:
-      'Auditing, diagnosing, and polishing existing frontend interfaces to eliminate layout bugs, enhance responsiveness, and elevate visual craft.',
-    capabilities: [
-      'Responsive layout bug fixes',
-      'CSS and Tailwind architecture cleanups',
-      'Component-level interaction polish',
-      'Form validation and frontend UX refinements',
-    ],
+      'Existing interfaces diagnosed and improved. Layout bugs resolved, responsiveness corrected, interaction quality raised to match the design intent.',
+    deliverables: ['Responsive fixes', 'CSS architecture', 'Interaction polish', 'UX refinements'],
   },
 ];

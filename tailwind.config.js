@@ -8,26 +8,26 @@ export default {
     extend: {
       colors: {
         canvas: {
-          DEFAULT: '#F5F3EE', // Warm off-white primary background
-          card: '#FAF9F5',    // Slightly elevated card background
-          subtle: '#EFECE4',  // Section divider/subtle contrast
+          DEFAULT: '#F5F3EE', // Warm off-white primary canvas
+          card: '#FAF9F5',    // Slightly elevated surface
+          subtle: '#EFECE4',  // Hairline surface contrast
         },
         ink: {
-          DEFAULT: '#202020', // Charcoal primary text & dark containers
-          muted: '#555555',   // Secondary text
-          subtle: '#888888',  // Metadata and borders
+          DEFAULT: '#202020', // Deep charcoal typography & dark surfaces
+          muted: '#52504C',   // Balanced editorial body text
+          subtle: '#827E77',  // Technical metadata & secondary labels
         },
         lime: {
-          accent: '#C7F36B', // Electric lime highlight
+          accent: '#C7F36B', // Electric lime — surgical focal accent
           light: '#D8F88F',
         },
         indigo: {
-          accent: '#7067E8', // Indigo secondary accent
+          accent: '#7067E8', // Indigo — technical tags & architecture labels
           light: '#8C84F0',
         },
         border: {
-          subtle: '#E2DFD8', // Hairline borders
-          dark: '#333333',
+          subtle: '#E2DFD8', // Hairline 1px borders
+          dark: '#2E2D2A',
         },
       },
       fontFamily: {
@@ -35,8 +35,14 @@ export default {
         body: ['Inter', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
+      letterSpacing: {
+        tightest: '-0.04em',
+        tighter: '-0.03em',
+        tight: '-0.02em',
+        widest: '0.15em',
+      },
       maxWidth: {
-        container: '1200px',
+        container: '1240px',
       },
     },
   },

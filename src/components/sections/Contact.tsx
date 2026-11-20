@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { contactDetails } from '../../data/contact';
-import { SectionHeading } from '../ui/SectionHeading';
-import { Button } from '../ui/Button';
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -9,9 +7,9 @@ export const Contact: React.FC = () => {
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(contactDetails.email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
     } catch {
+      // fallback: still show copied feedback
+    } finally {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     }
@@ -23,147 +21,95 @@ export const Contact: React.FC = () => {
       className="py-24 sm:py-32 px-6 sm:px-8 md:px-12 max-w-container mx-auto w-full border-t border-border-subtle"
       aria-label="Contact and Inquiries"
     >
-      <div className="space-y-16">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <SectionHeading
-            label="05 / Contact"
-            title="Let's Build Something Thoughtful"
-            description="Have an upcoming website project, need reliable frontend collaboration, or want to refine an existing interface? Let's discuss your timeline and goals."
-          />
-          <div className="hidden md:block text-right font-mono text-xs text-ink-subtle">
-            Direct Founder Communication
-          </div>
+      {/* Section label */}
+      <span className="font-mono text-xs text-ink-subtle uppercase tracking-widest block mb-16">
+        05 / Contact
+      </span>
+
+      {/* Stark dark anchor — the card IS the section heading */}
+      <div className="bg-ink text-canvas p-10 sm:p-14 md:p-20 space-y-12">
+
+        {/* Availability status pill */}
+        <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-lime-accent">
+          <span className="w-1.5 h-1.5 rounded-full bg-lime-accent" aria-hidden="true" />
+          <span>Open for Q1 / Q2 Engagements · Remote Worldwide</span>
         </div>
 
-        {/* High-Impact Charcoal Editorial Card (Clean Architecture, No Blurry Glow Blobs) */}
-        <div className="bg-ink text-canvas rounded-3xl p-8 sm:p-12 md:p-16 relative overflow-hidden shadow-xl space-y-12">
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
-            {/* Left: Email Headline & Direct Copy */}
-            <div className="space-y-6 max-w-2xl">
-              <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-lime-accent">
-                <span className="w-1.5 h-1.5 rounded-full bg-lime-accent" />
-                <span>Open for Q1/Q2 Engagements · Remote Worldwide</span>
-              </div>
+        {/* Monumental display headline */}
+        <h2 className="font-heading font-bold text-canvas leading-[0.95] tracking-[-0.035em] text-[clamp(2.5rem,6vw,5.5rem)]">
+          Let's build something<br className="hidden sm:inline" /> exceptional
+          <span className="text-lime-accent" aria-hidden="true">.</span>
+        </h2>
 
-              <h3 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-canvas leading-tight">
-                Send an email or message to start the conversation<span className="text-lime-accent">.</span>
-              </h3>
+        {/* Supporting sentence */}
+        <p className="font-body text-zinc-400 text-base sm:text-lg leading-relaxed max-w-xl">
+          Have an upcoming project, need reliable frontend collaboration, or want to refine an
+          existing interface? Start with an email or a WhatsApp message.
+        </p>
 
-              <p className="font-body text-zinc-300 text-base sm:text-lg leading-relaxed">
-                Whether you have a finalized Figma design ready for production or an early concept to map out, drop a line. All inquiries are reviewed directly by Suardi with replies within 24 business hours.
-              </p>
+        {/* Primary contact actions */}
+        <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4">
+          {/* Email — click to copy */}
+          <button
+            onClick={handleCopyEmail}
+            className="group inline-flex items-center gap-3 font-heading font-bold text-canvas bg-transparent border border-canvas/20 px-6 py-4 hover:border-canvas/60 hover:bg-canvas/5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink text-sm sm:text-base"
+            aria-label={copied ? 'Email address copied' : 'Click to copy email address'}
+          >
+            {copied ? (
+              <>
+                <svg className="w-4 h-4 text-lime-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-lime-accent">Copied to clipboard</span>
+              </>
+            ) : (
+              <>
+                <svg className="w-4 h-4 text-zinc-400 group-hover:text-canvas transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                {contactDetails.email}
+              </>
+            )}
+          </button>
 
-              {/* Email Address & Copy Trigger */}
-              <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
-                <a
-                  href={`mailto:${contactDetails.email}`}
-                  className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-lime-accent hover:underline decoration-lime-accent/50 underline-offset-8 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent rounded-sm"
-                >
-                  {contactDetails.email}
-                </a>
+          {/* WhatsApp */}
+          <a
+            href={contactDetails.whatsappPlaceholder}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 font-heading font-bold text-canvas border border-canvas/20 px-6 py-4 hover:border-canvas/60 hover:bg-canvas/5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink text-sm sm:text-base"
+            aria-label="Message on WhatsApp"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            WhatsApp Chat
+          </a>
+        </div>
 
-                <button
-                  type="button"
-                  onClick={handleCopyEmail}
-                  className="inline-flex items-center gap-2 self-start px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 text-canvas text-xs font-mono transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent cursor-pointer"
-                  aria-label="Copy email address to clipboard"
-                >
-                  {copied ? (
-                    <>
-                      <span className="text-lime-accent font-bold">✓</span>
-                      <span>Copied to Clipboard!</span>
-                    </>
-                  ) : (
-                    <>
-                      <svg
-                        className="w-3.5 h-3.5 text-zinc-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        aria-hidden="true"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                        />
-                      </svg>
-                      <span>Copy Email</span>
-                    </>
-                  )}
-                </button>
-              </div>
-            </div>
-
-            {/* Right: Quick Action Buttons */}
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-3.5 shrink-0">
-              <Button
-                href={`mailto:${contactDetails.email}`}
-                variant="lime"
-                size="md"
-                className="w-full justify-center"
-              >
-                Send Email Directly
-              </Button>
-
-              <Button
-                href={contactDetails.whatsappPlaceholder}
-                isExternal
-                variant="secondary-dark"
-                size="md"
-                className="w-full justify-center"
-                icon={
-                  <svg
-                    className="w-4 h-4 text-canvas"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                }
-              >
-                WhatsApp Chat
-              </Button>
-            </div>
+        {/* Footer metadata row */}
+        <div className="pt-8 border-t border-canvas/10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-zinc-500">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <span>Bandung / Jakarta · UTC+7</span>
+            <span>·</span>
+            <a
+              href={contactDetails.githubPlaceholder}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-canvas transition-colors underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent"
+            >
+              GitHub ↗
+            </a>
+            <a
+              href={contactDetails.linkedinPlaceholder}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-canvas transition-colors underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent"
+            >
+              LinkedIn ↗
+            </a>
           </div>
-
-          {/* Channels & Timezone Coordinates */}
-          <div className="relative z-10 pt-8 border-t border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono text-zinc-400">
-            <div className="flex items-center gap-6">
-              <span className="text-zinc-500">Profiles:</span>
-              <a
-                href={contactDetails.githubPlaceholder}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-canvas transition-colors underline-offset-4 hover:underline"
-              >
-                GitHub ↗
-              </a>
-              <a
-                href={contactDetails.linkedinPlaceholder}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-canvas transition-colors underline-offset-4 hover:underline"
-              >
-                LinkedIn ↗
-              </a>
-            </div>
-
-            <div className="flex items-center gap-4 text-zinc-500">
-              <span>Timezone: UTC+7 (WIB)</span>
-              <span>·</span>
-              <span>Placeholder links active until confirmed</span>
-            </div>
-          </div>
+          <span className="text-zinc-600">Placeholder links · pending confirmation</span>
         </div>
       </div>
     </section>

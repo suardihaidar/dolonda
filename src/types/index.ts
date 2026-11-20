@@ -10,8 +10,9 @@ export interface Project {
   category: string;
   isConcept: boolean;
   description: string;
+  role: string;
+  architectureNote: string;
   technologies: string[];
-  features: string[];
   liveUrlPlaceholder?: string;
   repoUrlPlaceholder?: string;
   previewNote: string;
@@ -21,13 +22,13 @@ export interface ServiceItem {
   number: string;
   title: string;
   description: string;
-  capabilities: string[];
+  deliverables: string[];
 }
 
-export interface TechItem {
-  name: string;
-  category: 'core' | 'framework' | 'styling' | 'tooling';
-  highlight?: boolean;
+export interface TechPillar {
+  id: string;
+  label: string;
+  items: string[];
 }
 
 export interface ContactInfo {

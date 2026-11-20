@@ -8,14 +8,11 @@ export const projects: Project[] = [
     category: 'Hospitality Web Experience',
     isConcept: true,
     description:
-      'A serene, responsive digital presence for a fictional Bali luxury boutique villa brand. Designed with editorial typography, generous imagery framing, and high-conversion reservation touchpoints.',
+      'A serene digital presence for a fictional Bali boutique villa. The challenge: express warmth and locality without resorting to generic stock imagery tropes or bloated carousels.',
+    role: 'Design & Frontend Development',
+    architectureNote:
+      'Built on a mobile-first grid that scales from a single-column portrait view to a full editorial spread at viewport widths above 1024px. Reservation touchpoints are contextually placed rather than globally repeated — every CTA earns its position in the layout.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    features: [
-      'Responsive landing page layout',
-      'Property architecture & accommodation showcase',
-      'Contextual booking inquiry CTAs',
-      'Direct WhatsApp booking integration placeholder',
-    ],
     liveUrlPlaceholder: 'https://villa-concept.dolonda.com',
     repoUrlPlaceholder: 'https://github.com/suard/bali-villa-concept',
     previewNote: 'Concept Project — Not commissioned client work',
@@ -27,14 +24,11 @@ export const projects: Project[] = [
     category: 'Web Application Interface',
     isConcept: true,
     description:
-      'A responsive analytics dashboard interface designed for modern software teams. Features modular metric overview widgets, interactive data visualization tables, and intuitive filtering controls.',
+      'A dense data-rich interface for software teams that relies on information hierarchy rather than decorative chrome. Metrics are readable at a glance; complexity is organised, not hidden.',
+    role: 'Frontend Architecture & UI Engineering',
+    architectureNote:
+      'Component architecture uses strict TypeScript interfaces for every data shape. Layout adapts from a stacked single-column mobile view to a 12-column CSS grid desktop layout. No third-party charting library — data visualisation is achieved through native CSS proportional bars, keeping the bundle lightweight.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    features: [
-      'High-level metrics and performance overview',
-      'Realistic mock analytics data representation',
-      'Dynamic charts and data tables',
-      'Search, filtering, and responsive navigation controls',
-    ],
     liveUrlPlaceholder: 'https://saas-concept.dolonda.com',
     repoUrlPlaceholder: 'https://github.com/suard/saas-dashboard-concept',
     previewNote: 'Concept Project — Not commissioned client work',

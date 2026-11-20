@@ -12,87 +12,75 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
   return (
     <article
-      className="group bg-canvas-card border border-border-subtle rounded-3xl p-6 sm:p-8 md:p-10 transition-all duration-300 hover:border-ink/30 hover:shadow-lg"
+      className="group"
       aria-labelledby={`project-title-${project.id}`}
     >
       <div
         className={`flex flex-col ${
           isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-        } gap-8 lg:gap-12 items-stretch`}
+        } gap-0 lg:gap-0 items-stretch border border-border-subtle`}
       >
-        {/* Visual Preview Container */}
-        <div className="lg:w-1/2 flex flex-col justify-center">
-          <div className="relative w-full rounded-2xl overflow-hidden group-hover:scale-[1.01] transition-transform duration-300">
+        {/* Visual canvas — full bleed, no rounded corners */}
+        <div className="lg:w-[55%] flex-shrink-0 overflow-hidden bg-canvas-subtle">
+          <div className="w-full h-full transition-transform duration-500 group-hover:scale-[1.02]">
             <ProjectPreviewMockup projectId={project.id} />
           </div>
         </div>
 
-        {/* Project Narrative & Details */}
-        <div className="lg:w-1/2 flex flex-col justify-between space-y-6">
-          <div className="space-y-4">
-            {/* Header Metadata */}
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <span className="font-mono text-xs text-ink-subtle uppercase tracking-wider">
-                {project.number} / {project.category}
+        {/* Case study text — editorial narrative format */}
+        <div className="lg:w-[45%] flex flex-col justify-between p-8 sm:p-10 md:p-12 space-y-8">
+          {/* Top: numbering + concept badge */}
+          <div className="flex items-start justify-between gap-4">
+            <span className="font-mono text-xs text-ink-subtle uppercase tracking-widest">
+              {project.number} / {project.category}
+            </span>
+            {project.isConcept && (
+              <span className="shrink-0 font-mono text-[11px] text-indigo-accent border border-indigo-accent/30 px-2.5 py-1">
+                Concept Study
               </span>
+            )}
+          </div>
 
-              {/* Strict Concept Project Badge */}
-              {project.isConcept && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-canvas-subtle border border-border-subtle font-mono text-[11px] text-ink-muted">
-                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-accent" />
-                  Concept Work
-                </span>
-              )}
-            </div>
-
-            {/* Project Title */}
+          {/* Title — editorial scale */}
+          <div className="space-y-5">
             <h3
               id={`project-title-${project.id}`}
-              className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-ink tracking-tight"
+              className="font-heading text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-ink tracking-tight leading-tight"
             >
               {project.title}
             </h3>
 
-            {/* Project Description */}
+            {/* Description prose */}
             <p className="font-body text-ink-muted text-base leading-relaxed">
               {project.description}
             </p>
-
-            {/* Key Architectural & Functional Highlights */}
-            <div className="space-y-2 pt-2">
-              <p className="font-mono text-xs text-ink-subtle uppercase tracking-wider">
-                Key Features Included:
-              </p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-body text-ink">
-                {project.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="flex items-start gap-2">
-                    <span className="text-lime-accent font-bold mt-0.5">↳</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
-          {/* Footer Area: Technologies & Actions */}
-          <div className="pt-4 border-t border-border-subtle/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            {/* Technology Pills */}
+          {/* Architecture note — the editorial alternative to bullet lists */}
+          <div className="space-y-3 border-l-2 border-border-subtle pl-5">
+            <p className="font-mono text-xs text-ink-subtle uppercase tracking-widest">
+              Engineering Approach
+            </p>
+            <p className="font-body text-sm text-ink-muted leading-relaxed">
+              {project.architectureNote}
+            </p>
+          </div>
+
+          {/* Footer: role + stack metadata */}
+          <div className="pt-4 border-t border-border-subtle space-y-3">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-1 font-mono text-xs">
+              <span className="text-ink-subtle">Role</span>
+              <span className="text-ink font-medium">{project.role}</span>
+            </div>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 rounded-md bg-canvas border border-border-subtle font-mono text-xs text-ink-muted"
+                  className="px-2.5 py-1 bg-canvas border border-border-subtle font-mono text-[11px] text-ink-muted"
                 >
                   {tech}
                 </span>
               ))}
-            </div>
-
-            {/* Action Indicators (with concept notice) */}
-            <div className="flex items-center gap-3 text-xs font-mono">
-              <span className="text-ink-subtle italic">
-                Interactive Concept
-              </span>
             </div>
           </div>
         </div>

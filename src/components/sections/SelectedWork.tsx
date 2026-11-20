@@ -1,6 +1,5 @@
 import React from 'react';
 import { projects } from '../../data/projects';
-import { SectionHeading } from '../ui/SectionHeading';
 import { ProjectCard } from '../ui/ProjectCard';
 
 export const SelectedWork: React.FC = () => {
@@ -10,41 +9,31 @@ export const SelectedWork: React.FC = () => {
       className="py-24 sm:py-32 px-6 sm:px-8 md:px-12 max-w-container mx-auto w-full border-t border-border-subtle"
       aria-label="Selected Work & Concept Projects"
     >
-      <div className="space-y-16">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <SectionHeading
-            label="01 / Work"
-            title="Selected Work"
-            description="Explorations in frontend architecture, design-to-code craft, and responsive user experiences."
-          />
-          <div className="hidden md:block text-right">
-            <span className="font-mono text-xs text-ink-subtle">
-              Showing 02 Concept Studies
-            </span>
-          </div>
+      {/* Section header — editorial label format */}
+      <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-16">
+        <div className="space-y-2">
+          <span className="font-mono text-xs text-ink-subtle uppercase tracking-widest">01 / Work</span>
+          <h2 className="font-heading text-[clamp(2rem,4vw,3rem)] font-bold text-ink tracking-tight leading-tight">
+            Selected Work
+          </h2>
         </div>
-
-        {/* Project Cards Grid */}
-        <div className="space-y-12 sm:space-y-16">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
-
-        {/* Authenticity & Integrity Note */}
-        <div className="p-6 rounded-2xl bg-canvas-card border border-border-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-lime-accent" />
-            <p className="font-body text-xs text-ink-muted">
-              <strong className="text-ink font-semibold">Honest Attribution:</strong> These projects are self-initiated concept implementations engineered by Suardi to demonstrate technical architecture, responsive discipline, and clean React code.
-            </p>
-          </div>
-          <span className="font-mono text-[11px] text-ink-subtle uppercase tracking-wider shrink-0">
-            Concept Lab · 2026
-          </span>
-        </div>
+        <p className="font-body text-sm text-ink-muted max-w-sm leading-relaxed">
+          Explorations in frontend architecture, design-to-code craft, and responsive user experience.
+        </p>
       </div>
+
+      {/* Projects — full-bleed editorial layout, not a card grid */}
+      <div className="space-y-16 sm:space-y-20">
+        {projects.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} />
+        ))}
+      </div>
+
+      {/* Authenticity footnote — inline text, not a banner card */}
+      <p className="mt-12 font-mono text-xs text-ink-subtle border-t border-border-subtle pt-6">
+        These are self-initiated concept studies demonstrating technical architecture and responsive discipline.
+        Not commissioned client work. — Suardi, {new Date().getFullYear()}
+      </p>
     </section>
   );
 };

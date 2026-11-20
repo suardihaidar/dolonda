@@ -1,14 +1,19 @@
-import { TechItem } from '../types';
+import { TechPillar } from '../types';
 
-export const techStack: TechItem[] = [
-  { name: 'React', category: 'framework', highlight: true },
-  { name: 'TypeScript', category: 'core', highlight: true },
-  { name: 'Tailwind CSS', category: 'styling', highlight: true },
-  { name: 'JavaScript (ESNext)', category: 'core' },
-  { name: 'React Native', category: 'framework' },
-  { name: 'HTML5 Semantic', category: 'core' },
-  { name: 'Modern CSS3', category: 'styling' },
-  { name: 'Git', category: 'tooling' },
-  { name: 'GitHub', category: 'tooling' },
-  { name: 'Vite', category: 'tooling', highlight: true },
+export const techPillars: TechPillar[] = [
+  {
+    id: 'language',
+    label: 'Core Language & Type Safety',
+    items: ['TypeScript (Strict Mode)', 'JavaScript ESNext', 'Web APIs'],
+  },
+  {
+    id: 'application',
+    label: 'Component & Application Layer',
+    items: ['React 18 / 19', 'React Native', 'Vite', 'State Architecture'],
+  },
+  {
+    id: 'design-system',
+    label: 'Design System & Styling',
+    items: ['Tailwind CSS Architecture', 'Modern CSS3', 'WCAG 2.1 AA', 'Responsive Design Systems'],
+  },
 ];
