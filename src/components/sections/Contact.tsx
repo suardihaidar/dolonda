@@ -29,9 +29,8 @@ export const Contact: React.FC = () => {
       {/* Stark dark anchor — the card IS the section heading */}
       <div className="bg-ink text-canvas p-10 sm:p-14 md:p-20 space-y-12">
 
-        {/* Availability status pill */}
+        {/* Availability status */}
         <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-lime-accent">
-          <span className="w-1.5 h-1.5 rounded-full bg-lime-accent" aria-hidden="true" />
           <span>Open for Q1 / Q2 Engagements · Remote Worldwide</span>
         </div>
 

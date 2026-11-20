@@ -65,10 +65,7 @@ export const Hero: React.FC = () => {
 
         {/* Minimal status row */}
         <div className="pt-6 border-t border-border-subtle flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs text-ink-subtle">
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-lime-accent" aria-hidden="true" />
-            Available for new engagements
-          </span>
+          <span>Available for new engagements</span>
           <span>Remote · Worldwide</span>
           <span className="text-indigo-accent">React · TypeScript · Tailwind CSS</span>
         </div>

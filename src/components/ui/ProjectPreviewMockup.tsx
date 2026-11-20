@@ -77,7 +77,7 @@ export const ProjectPreviewMockup: React.FC<ProjectPreviewMockupProps> = ({ proj
       {/* Top Bar: Authentic Developer Console Header */}
       <div className="flex items-center justify-between pb-4 border-b border-[#27272A]">
         <div className="flex items-center gap-2.5">
-          <div className="w-2 h-2 rounded-sm bg-lime-accent" />
+          <div className="w-2 h-2 rounded-sm bg-zinc-600" />
           <span className="font-heading font-semibold text-xs tracking-wider uppercase text-zinc-200">
             KINETIC EDGE
           </span>
@@ -131,7 +131,7 @@ export const ProjectPreviewMockup: React.FC<ProjectPreviewMockupProps> = ({ proj
             </div>
             <div className="flex items-center justify-between text-zinc-300">
               <span className="text-zinc-200">/v1/auth/session</span>
-              <span className="text-lime-accent text-[10px]">GET</span>
+              <span className="text-sky-400 text-[10px]">GET</span>
               <span className="text-emerald-400 text-[10px]">200 OK</span>
               <span className="text-zinc-400">14ms</span>
             </div>

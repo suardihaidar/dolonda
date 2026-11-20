@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
               aria-label="Back to top"
             >
               <span>Back to Top</span>
-              <span className="text-lime-accent font-bold">↑</span>
+              <span className="font-bold">↑</span>
             </a>
           </div>
         </div>
