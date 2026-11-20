@@ -5,11 +5,9 @@ Commit messages serve as the primary identifiers for each recorded entry.
 
 ---
 
-## [Unreleased]
-
 ---
 
-## [0.2.0] — 2026-11-20
+## [0.2.0] — 2026-11-21
 
 ### Anti-Slop Phase 2–7 Full Editorial Transformation
 
@@ -24,6 +22,34 @@ Commit messages serve as the primary identifiers for each recorded entry.
     - **Phase 6 — TechStack:** Eliminated 10-badge grid; replaced with 3-pillar bordered typographic catalog; removed standalone HTML/CSS/Git badges; `techStack.ts` reorganised as `TechPillar[]`; deleted `TechBadge.tsx`.
     - **Phase 7 — Contact:** Monumental `h2` display headline replaces `SectionHeading` above card; squared button borders; WhatsApp button uses correct `text-canvas` on `bg-ink`; added Bandung/Jakarta UTC+7 local time row.
     - **Build:** 0 TypeScript errors · 721ms · 55.5kB gzip JS.
+
+### Anti-Slop Refinement (Fixes)
+- **`de37b9f`** — `fix: remove all decorative lime-accent slop dots and stray accent misuse`
+  - **Details:** Comprehensive cleanup of decorative lime-accent dots across all components, restoring strict accent discipline as per anti-slop guidelines.
+  - **Changes:**
+    - **Hero:** Removed rounded-full availability dot from status row (text alone is sufficient)
+    - **Contact:** Removed rounded-full dot from availability row (text-lime-accent label is enough)
+    - **Footer:** Reverted back-to-top arrow from text-lime-accent to ink-subtle
+    - **ProjectPreviewMockup:** Replaced bg-lime-accent brand block with bg-zinc-600 neutral; replaced text-lime-accent GET label with text-sky-400 (HTTP method convention)
+    - **Button.tsx:** Removed unused lime variant from union type to prevent future misuse
+  - **Lime discipline:** Now reserved to exactly 3 uses: wordmark dot (Navbar + Footer), headline terminal period (Hero + Contact), and focus-visible accessibility rings.
+
+- **`cf460ee`** — `fix: remove remaining recorative lime-accent slop dots`
+  - **Details:** Continued cleanup of remaining decorative lime-accent dots identified during anti-slop audit.
+  - **Changes:**
+    - **Footer:** Removed decorative lime dot from back-to-top icon
+    - **Navbar:** Removed decorative lime dot from back-to-top icon
+    - **Contact:** Refined availability row dot styling
+    - **Hero:** Refined availability row dot styling
+    - **TechStack:** Refined accent usage in tech badge labels
+    - **ProjectPreviewMockup:** Refined accent usage in brand block
+
+### Build Toolchain Updates
+- **`a35cf25`** — `chore: upgrade vite and @vitejs/plugin-react to latest version`
+  - **Details:** Updated build toolchain dependencies to latest stable versions.
+  - **Changes:**
+    - **package.json:** Upgraded `vite` and `@vitejs/plugin-react` to latest versions
+    - **package-lock.json:** Updated dependency tree (557 insertions, 1151 deletions)
 
 ---
 
@@ -42,7 +68,7 @@ Commit messages serve as the primary identifiers for each recorded entry.
 
 ---
 
-## [0.1.0] — 2026-11-19
+## [0.2.0] — 2026-11-21
 
 ### Fixes & Refinements
 - **`5f9b153`** — `fix(contact): resolve CSS cascade collision on whatsapp button in dark card`
