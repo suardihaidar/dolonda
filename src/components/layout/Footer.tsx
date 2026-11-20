@@ -24,7 +24,6 @@ export const Footer: React.FC = () => {
               <span className="font-heading text-3xl font-bold tracking-tight text-ink group-hover:text-ink/80 transition-colors">
                 Dolonda
               </span>
-              <span className="w-2.5 h-2.5 rounded-full bg-lime-accent inline-block transform group-hover:scale-125 transition-transform duration-200" />
             </a>
             <p className="font-body text-sm sm:text-base text-ink-muted leading-relaxed">
               Building thoughtful digital experiences. Founder-led creative development by Suardi.

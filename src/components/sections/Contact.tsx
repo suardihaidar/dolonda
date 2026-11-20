@@ -30,14 +30,13 @@ export const Contact: React.FC = () => {
       <div className="bg-ink text-canvas p-10 sm:p-14 md:p-20 space-y-12">
 
         {/* Availability status */}
-        <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-lime-accent">
-          <span>Open for Q1 / Q2 Engagements · Remote Worldwide</span>
+        <div className="font-mono text-xs uppercase tracking-wider text-lime-accent">
+          Open for Q1 / Q2 Engagements · Remote Worldwide
         </div>
 
         {/* Monumental display headline */}
         <h2 className="font-heading font-bold text-canvas leading-[0.95] tracking-[-0.035em] text-[clamp(2.5rem,6vw,5.5rem)]">
           Let's build something<br className="hidden sm:inline" /> exceptional
-          <span className="text-lime-accent" aria-hidden="true">.</span>
         </h2>
 
         {/* Supporting sentence */}
@@ -89,7 +88,7 @@ export const Contact: React.FC = () => {
         {/* Footer metadata row */}
         <div className="pt-8 border-t border-canvas/10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-zinc-500">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <span>Bandung / Jakarta · UTC+7</span>
+            <span>Indonesia · GMT+7</span>
             <span>·</span>
             <a
               href={contactDetails.githubPlaceholder}

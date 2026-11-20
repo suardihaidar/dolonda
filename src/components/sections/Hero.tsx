@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
       <div className="mb-12 sm:mb-16 flex items-center gap-3 font-mono text-xs tracking-widest uppercase text-ink-subtle border-b border-border-subtle pb-5">
         <span className="text-ink font-semibold">Suardi</span>
         <span className="text-border-subtle">·</span>
-        <span>Bandung / Jakarta · Indonesia · GMT+7</span>
+        <span>Indonesia · GMT+7</span>
         <span className="text-border-subtle hidden sm:inline">·</span>
         <span className="hidden sm:inline">Independent Creative Developer</span>
       </div>
@@ -26,7 +26,6 @@ export const Hero: React.FC = () => {
             digital
           </span>{' '}
           experiences
-          <span className="text-lime-accent" aria-hidden="true">.</span>
         </h1>
 
         {/* Concise, honest bio */}

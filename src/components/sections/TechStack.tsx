@@ -49,7 +49,7 @@ export const TechStack: React.FC = () => {
                   key={item}
                   className="flex items-baseline gap-3 font-body text-sm text-ink-muted"
                 >
-                  <span className="w-1 h-1 rounded-full bg-border-subtle shrink-0 mt-2" aria-hidden="true" />
+                  <span className="font-mono text-ink-subtle shrink-0" aria-hidden="true">—</span>
                   {item}
                 </li>
               ))}

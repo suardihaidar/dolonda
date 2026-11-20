@@ -34,7 +34,6 @@ export const Navbar: React.FC = () => {
             <span className="font-heading text-2xl font-bold tracking-tight text-ink group-hover:text-ink/80 transition-colors">
               Dolonda
             </span>
-            <span className="w-2 h-2 rounded-full bg-lime-accent inline-block transform group-hover:scale-125 transition-transform duration-200" />
           </a>
 
           {/* Desktop Navigation Links */}

@@ -87,8 +87,7 @@ export const ProjectPreviewMockup: React.FC<ProjectPreviewMockupProps> = ({ proj
         </div>
 
         <div className="flex items-center gap-2 text-[11px] text-zinc-400">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
-          <span>All Nodes Synchronized</span>
+          <span className="text-zinc-500 text-[11px]">All Nodes Synchronized</span>
         </div>
       </div>
 
