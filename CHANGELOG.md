@@ -6,7 +6,29 @@ Commit messages serve as the primary identifiers for each recorded entry.
 ---
 
 ## [Unreleased]
-- **`refactor: anti-ui-slop design system review and layout refinement`**
+
+---
+
+## [0.2.0] — 2026-11-20
+
+### Anti-Slop Phase 2–7 Full Editorial Transformation
+
+- **`89a754d`** — `refactor: anti-slop phase 2-7 full editorial transformation`
+  - **Details:** Complete editorial redesign across all 8 sections applying miqdadbadjuber anti-slop delivery gate requirements. Eliminates all consecutive identical card grids, resume bullet lists, accent scattering, and robotic copy.
+  - **Changes:**
+    - **Phase 1 — Foundation:** Refined `tailwind.config.js` with `ink.muted`/`ink.subtle` tokens, letter-spacing tokens; updated `types/index.ts` to replace `TechItem` with `TechPillar`, add `Project.role`/`architectureNote`, rename `capabilities` → `deliverables`.
+    - **Phase 2 — Hero:** Monumental display headline at `clamp(3.25rem,8vw,7rem)` with `−0.035em` tracking; replaced generic availability pill with geographic micro-masthead row; removed capability matrix column; simplified to single primary CTA + plain-text secondary link.
+    - **Phase 3 — Selected Work:** Eliminated all `↳` arrow bullet lists; replaced with editorial case study prose (description + architecture note); full-bleed bordered layout (no `rounded-3xl` card boxes); `projects.ts` gains `role`/`architectureNote` fields.
+    - **Phase 4 — Services:** Eliminated 3-column card grid; replaced with hairline `divide-y` row layout; `services.ts` renamed `capabilities` → `deliverables`; inline discuss link replaces banner box; deleted `ServiceCard.tsx`.
+    - **Phase 5 — About:** Removed boxed monogram `S.` card; full-width editorial pull-quote at `clamp(1.5rem,3vw,2.25rem)`; prose working principles replace nested principle cards; minimal signature timeline table.
+    - **Phase 6 — TechStack:** Eliminated 10-badge grid; replaced with 3-pillar bordered typographic catalog; removed standalone HTML/CSS/Git badges; `techStack.ts` reorganised as `TechPillar[]`; deleted `TechBadge.tsx`.
+    - **Phase 7 — Contact:** Monumental `h2` display headline replaces `SectionHeading` above card; squared button borders; WhatsApp button uses correct `text-canvas` on `bg-ink`; added Bandung/Jakarta UTC+7 local time row.
+    - **Build:** 0 TypeScript errors · 721ms · 55.5kB gzip JS.
+
+---
+
+### Previous Anti-Slop First Pass (Superseded)
+- **`12cf55f`** — `refactor: anti-ui-slop design system review and layout refinement`
   - **Details:** Comprehensive audit and elimination of generic AI visual tropes in accordance with anti-slop principles.
   - **Changes:**
     - Replaced generic pulsing green ping badge in Hero with clean monospace metadata coordinates.
