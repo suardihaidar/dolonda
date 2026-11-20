@@ -44,6 +44,7 @@ The project documentation serves as the single source of truth for design, engin
 - **[docs/PRD.md](file:///Users/suard/Project/dolonda/docs/PRD.md):** Product Requirements Document detailing user personas, functional specifications, and non-functional requirements.
 - **[docs/ARCHITECTURE.md](file:///Users/suard/Project/dolonda/docs/ARCHITECTURE.md):** Architectural decisions, component hierarchy, data flow, and trade-off analysis.
 - **[docs/DESIGN_SYSTEM.md](file:///Users/suard/Project/dolonda/docs/DESIGN_SYSTEM.md):** Color tokens, typography scales, layout grids, button styles, and motion rules.
+- **[docs/ANTI_SLOP_GUIDELINES.md](file:///Users/suard/Project/dolonda/docs/ANTI_SLOP_GUIDELINES.md):** Architectural standards and negative constraints rejecting generic AI UI clichés.
 - **[tasks/MVP.md](file:///Users/suard/Project/dolonda/tasks/MVP.md):** Stage-by-stage development roadmap and atomic acceptance criteria.
 - [tasks/BACKLOG.md](file:///Users/suard/Project/dolonda/tasks/BACKLOG.md): Post-MVP backlog and future studio expansion initiatives.
 - [CHANGELOG.md](file:///Users/suard/Project/dolonda/CHANGELOG.md): Chronological record of all milestones and changes using commit identifiers.

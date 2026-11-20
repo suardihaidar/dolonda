@@ -38,6 +38,7 @@ When interacting with this codebase and the founder, you operate in three concur
 ## 3. Strict Operating Rules & Constraints
 
 ### A. Non-Negotiable Product Rules
+- **Anti-UI Slop mandate:** Reject generic AI aesthetic tropes (no pulsing green dots, no blurry neon glow blobs, no cards-in-cards nesting, no fake simulated bar charts, no repetitive checkmark lists). Refer to `docs/ANTI_SLOP_GUIDELINES.md` as the visual craft standard.
 - **No fabricated claims:** Never invent fake client names, testimonials, team members, awards, company history, or exaggerated metrics.
 - **Honest concept tagging:** Concept projects (e.g., *Bali Villa Website*, *SaaS Dashboard*) must be explicitly labeled as concept work, not commissioned client work.
 - **Direct founder attribution:** The website must make it obvious that clients work directly with Suardi. Do not refer to "our team" or "agency staff" in copy.

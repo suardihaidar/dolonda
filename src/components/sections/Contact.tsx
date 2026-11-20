@@ -12,7 +12,6 @@ export const Contact: React.FC = () => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
-      // Fallback if clipboard API is restricted
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     }
@@ -32,27 +31,19 @@ export const Contact: React.FC = () => {
             title="Let's Build Something Thoughtful"
             description="Have an upcoming website project, need reliable frontend collaboration, or want to refine an existing interface? Let's discuss your timeline and goals."
           />
-          <div className="hidden md:block text-right">
-            <span className="font-mono text-xs text-ink-subtle">
-              Direct Founder Communication
-            </span>
+          <div className="hidden md:block text-right font-mono text-xs text-ink-subtle">
+            Direct Founder Communication
           </div>
         </div>
 
-        {/* High-Impact Charcoal Editorial Card */}
+        {/* High-Impact Charcoal Editorial Card (Clean Architecture, No Blurry Glow Blobs) */}
         <div className="bg-ink text-canvas rounded-3xl p-8 sm:p-12 md:p-16 relative overflow-hidden shadow-xl space-y-12">
-          {/* Subtle Background Accent Shape */}
-          <div
-            className="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-lime-accent/10 blur-3xl pointer-events-none"
-            aria-hidden="true"
-          />
-
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
             {/* Left: Email Headline & Direct Copy */}
             <div className="space-y-6 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-lime-accent font-mono text-xs uppercase tracking-wider">
-                <span className="w-1.5 h-1.5 rounded-full bg-lime-accent animate-pulse" />
-                Open for Q1/Q2 Engagements
+              <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-lime-accent">
+                <span className="w-1.5 h-1.5 rounded-full bg-lime-accent" />
+                <span>Open for Q1/Q2 Engagements · Remote Worldwide</span>
               </div>
 
               <h3 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-canvas leading-tight">
@@ -60,7 +51,7 @@ export const Contact: React.FC = () => {
               </h3>
 
               <p className="font-body text-zinc-300 text-base sm:text-lg leading-relaxed">
-                Whether you have a finalized Figma design or an early idea, drop a note. I typically respond within 24 business hours.
+                Whether you have a finalized Figma design ready for production or an early concept to map out, drop a line. All inquiries are reviewed directly by Suardi with replies within 24 business hours.
               </p>
 
               {/* Email Address & Copy Trigger */}
@@ -145,10 +136,10 @@ export const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Social Profiles & Integrity Notice */}
+          {/* Channels & Timezone Coordinates */}
           <div className="relative z-10 pt-8 border-t border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono text-zinc-400">
             <div className="flex items-center gap-6">
-              <span>Direct Channels:</span>
+              <span className="text-zinc-500">Profiles:</span>
               <a
                 href={contactDetails.githubPlaceholder}
                 target="_blank"
@@ -167,9 +158,11 @@ export const Contact: React.FC = () => {
               </a>
             </div>
 
-            <span className="text-zinc-500">
-              Placeholder details active until real contact links are provided.
-            </span>
+            <div className="flex items-center gap-4 text-zinc-500">
+              <span>Timezone: UTC+7 (WIB)</span>
+              <span>·</span>
+              <span>Placeholder links active until confirmed</span>
+            </div>
           </div>
         </div>
       </div>

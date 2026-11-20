@@ -6,6 +6,17 @@ Commit messages serve as the primary identifiers for each recorded entry.
 ---
 
 ## [Unreleased]
+- **`refactor: anti-ui-slop design system review and layout refinement`**
+  - **Details:** Comprehensive audit and elimination of generic AI visual tropes in accordance with anti-slop principles.
+  - **Changes:**
+    - Replaced generic pulsing green ping badge in Hero with clean monospace metadata coordinates.
+    - Overhauled SaaS concept mockup to replace fake, cliché bar graphs ("Vortex Pulse") with an authentic developer telemetry routing table and latency diagnostics.
+    - Elevated luxury hospitality mockup (Villa Asmara) with refined architectural typography framing.
+    - Eliminated generic `✓` checkmarks in Services cards in favor of clean editorial dashes (`—`).
+    - Removed nested "cards-inside-cards" in the About section in favor of a clean, structured typographic table with hairline dividers.
+    - Cleaned up Technology Stack badges into cohesive engineering clusters.
+    - Removed blurred neon radial gradient blobs (`blur-3xl`) from the Contact section for crisp contrast.
+    - Codified permanent anti-slop guidelines in `docs/ANTI_SLOP_GUIDELINES.md` and updated `AGENTS.md`.
 
 ---
 

@@ -7,123 +7,142 @@ interface ProjectPreviewMockupProps {
 export const ProjectPreviewMockup: React.FC<ProjectPreviewMockupProps> = ({ projectId }) => {
   if (projectId === 'bali-villa') {
     return (
-      <div className="w-full h-full min-h-[300px] sm:min-h-[360px] bg-[#EAE7DC] text-[#2B2B28] rounded-2xl p-4 sm:p-6 flex flex-col justify-between overflow-hidden shadow-inner border border-stone-300/60 font-sans select-none">
-        {/* Mockup Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-stone-300">
-          <div className="flex items-center gap-2">
-            <span className="font-heading font-bold text-sm tracking-widest uppercase">
-              VILLA ASMARA
+      <div className="w-full h-full min-h-[320px] sm:min-h-[380px] bg-[#EFECE6] text-[#22211E] rounded-2xl p-5 sm:p-7 flex flex-col justify-between overflow-hidden border border-[#DCD7CD] select-none">
+        {/* Mockup Header: Minimal Luxury Editorial */}
+        <div className="flex items-center justify-between pb-4 border-b border-[#DCD7CD]">
+          <div className="flex items-baseline gap-2.5">
+            <span className="font-heading font-bold text-sm sm:text-base tracking-[0.2em] uppercase text-[#1A1917]">
+              ASMARA
             </span>
-            <span className="text-[10px] font-mono text-stone-600 bg-stone-200/80 px-2 py-0.5 rounded">
-              ULUWATU
+            <span className="text-[10px] font-mono tracking-widest text-[#736E65] uppercase">
+              Uluwatu, Bali
             </span>
           </div>
-          <div className="hidden sm:flex items-center gap-3 text-xs font-serif italic text-stone-600">
-            <span>Suites</span>
-            <span>Dining</span>
-            <span>Sanctuary</span>
+          <div className="hidden sm:flex items-center gap-5 text-xs tracking-wider uppercase text-[#545048] font-mono">
+            <span>The Villas</span>
+            <span>Wellness</span>
+            <span>Journal</span>
           </div>
-          <div className="text-[11px] font-mono bg-[#2B2B28] text-white px-3 py-1 rounded-full">
-            Reserve
+          <div className="text-[11px] font-mono font-medium tracking-wider uppercase bg-[#1A1917] text-[#EFECE6] px-3.5 py-1.5 rounded-full">
+            Inquire
           </div>
         </div>
 
-        {/* Mockup Centerpiece / Hero representation */}
-        <div className="my-auto py-4 space-y-3">
-          <div className="inline-block bg-white/70 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono tracking-wider uppercase text-stone-700">
-            Exclusive Clifftop Retreat
+        {/* Centerpiece: Architectural Composition */}
+        <div className="my-auto py-6 space-y-4">
+          <div className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#736E65]">
+            <span>Ref. 08°48'S 115°08'E</span>
+            <span>—</span>
+            <span>Cliffside Sanctuary</span>
           </div>
-          <p className="font-heading text-xl sm:text-2xl font-semibold text-stone-900 leading-snug">
-            Where Balinese heritage meets contemporary oceanfront serenity.
-          </p>
-          <div className="grid grid-cols-2 gap-2 pt-2">
-            <div className="bg-white/80 backdrop-blur-xs p-3 rounded-xl border border-stone-200 space-y-1">
-              <span className="text-[10px] font-mono uppercase text-stone-500">Ocean Villa</span>
-              <p className="font-heading text-sm font-bold text-stone-900">Cliffside Suite</p>
-              <span className="text-[10px] text-stone-600 font-mono">From $450 / night</span>
+
+          <h4 className="font-heading text-2xl sm:text-3xl font-normal tracking-tight text-[#1A1917] leading-snug">
+            Architecture sculptured above the Indian Ocean.
+          </h4>
+
+          {/* Accommodation Highlights Frame */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#DCD7CD] space-y-1">
+              <div className="flex justify-between items-center text-[10px] font-mono text-[#736E65] uppercase">
+                <span>The Pavilion Suite</span>
+                <span>420 m²</span>
+              </div>
+              <p className="font-heading text-sm font-semibold text-[#1A1917]">Private Infinity Pool & Ocean Frontage</p>
+              <p className="text-[11px] font-mono text-[#8C867B] pt-0.5">Rates from $580 / night</p>
             </div>
-            <div className="bg-white/80 backdrop-blur-xs p-3 rounded-xl border border-stone-200 space-y-1">
-              <span className="text-[10px] font-mono uppercase text-stone-500">Concierge</span>
-              <p className="font-heading text-sm font-bold text-stone-900">WhatsApp Booking</p>
-              <span className="text-[10px] text-emerald-700 font-mono font-medium">Instant confirmation</span>
+
+            <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#DCD7CD] space-y-1">
+              <div className="flex justify-between items-center text-[10px] font-mono text-[#736E65] uppercase">
+                <span>Direct Booking</span>
+                <span className="text-emerald-700 font-medium">WhatsApp Priority</span>
+              </div>
+              <p className="font-heading text-sm font-semibold text-[#1A1917]">Tailored Concierge Reservation</p>
+              <p className="text-[11px] font-mono text-[#8C867B] pt-0.5">Instant booking confirmation</p>
             </div>
           </div>
         </div>
 
-        {/* Mockup Footer bar */}
-        <div className="pt-3 border-t border-stone-300 flex items-center justify-between text-[11px] font-mono text-stone-600">
-          <span>Private Pool · Butler Service · Ocean View</span>
-          <span className="font-semibold text-stone-800">4.9 ★ (84 reviews)</span>
+        {/* Footer Bar: Editorial Details */}
+        <div className="pt-3.5 border-t border-[#DCD7CD] flex items-center justify-between text-[11px] font-mono text-[#736E65]">
+          <span>Sustainable Limestone & Teak Craft</span>
+          <span className="text-[#1A1917] font-medium">Concept Hospitality Case Study</span>
         </div>
       </div>
     );
   }
 
-  // SaaS Analytics Dashboard Mockup
+  // SaaS Workspace & Telemetry Interface (Grounded, Anti-Slop, No Cheesy Fake Bar Charts)
   return (
-    <div className="w-full h-full min-h-[300px] sm:min-h-[360px] bg-[#18181B] text-zinc-100 rounded-2xl p-4 sm:p-6 flex flex-col justify-between overflow-hidden shadow-inner border border-zinc-800 font-sans select-none">
-      {/* Mockup Top Navigation Bar */}
-      <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-        <div className="flex items-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-lime-accent" />
-          <span className="font-heading font-semibold text-xs tracking-wider uppercase text-zinc-300">
-            Vortex Pulse
+    <div className="w-full h-full min-h-[320px] sm:min-h-[380px] bg-[#121214] text-[#E4E4E7] rounded-2xl p-5 sm:p-7 flex flex-col justify-between overflow-hidden border border-[#27272A] select-none font-mono">
+      {/* Top Bar: Authentic Developer Console Header */}
+      <div className="flex items-center justify-between pb-4 border-b border-[#27272A]">
+        <div className="flex items-center gap-2.5">
+          <div className="w-2 h-2 rounded-sm bg-lime-accent" />
+          <span className="font-heading font-semibold text-xs tracking-wider uppercase text-zinc-200">
+            KINETIC EDGE
           </span>
-          <span className="text-[10px] font-mono bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">
-            v2.4
+          <span className="text-[10px] text-zinc-500 bg-[#1C1C1F] px-2 py-0.5 rounded border border-[#2E2E33]">
+            prod-cluster-01
           </span>
         </div>
-        <div className="hidden sm:flex items-center gap-1 text-[11px] font-mono text-zinc-400 bg-zinc-900 px-2.5 py-1 rounded-md border border-zinc-800">
-          <span>Filter: Last 30 Days</span>
-        </div>
-        <div className="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          Live telemetry
+
+        <div className="flex items-center gap-2 text-[11px] text-zinc-400">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <span>All Nodes Synchronized</span>
         </div>
       </div>
 
-      {/* Mockup Metrics Cards */}
-      <div className="my-auto py-3 space-y-3">
-        <div className="grid grid-cols-3 gap-2">
-          <div className="bg-zinc-900/90 p-2.5 sm:p-3 rounded-xl border border-zinc-800 space-y-0.5">
-            <span className="text-[10px] font-mono text-zinc-400">Total ARR</span>
-            <p className="font-heading text-base sm:text-lg font-bold text-white">$142.8k</p>
-            <span className="text-[10px] text-emerald-400 font-mono">+18.4%</span>
+      {/* Structured Metric Overview */}
+      <div className="my-auto py-5 space-y-4">
+        <div className="grid grid-cols-3 gap-2.5 sm:gap-3 text-left">
+          <div className="bg-[#18181B] p-3 rounded-xl border border-[#27272A] space-y-1">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Edge Requests</span>
+            <p className="font-heading text-lg sm:text-xl font-bold text-white tracking-tight">14.2M</p>
+            <span className="text-[10px] text-emerald-400 font-mono">↑ 8.4% vs last week</span>
           </div>
-          <div className="bg-zinc-900/90 p-2.5 sm:p-3 rounded-xl border border-zinc-800 space-y-0.5">
-            <span className="text-[10px] font-mono text-zinc-400">Active Nodes</span>
-            <p className="font-heading text-base sm:text-lg font-bold text-white">1,248</p>
-            <span className="text-[10px] text-emerald-400 font-mono">100% online</span>
+
+          <div className="bg-[#18181B] p-3 rounded-xl border border-[#27272A] space-y-1">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Median Latency</span>
+            <p className="font-heading text-lg sm:text-xl font-bold text-white tracking-tight">28ms</p>
+            <span className="text-[10px] text-zinc-400 font-mono">Global edge p50</span>
           </div>
-          <div className="bg-zinc-900/90 p-2.5 sm:p-3 rounded-xl border border-zinc-800 space-y-0.5">
-            <span className="text-[10px] font-mono text-zinc-400">P99 Latency</span>
-            <p className="font-heading text-base sm:text-lg font-bold text-white">42ms</p>
-            <span className="text-[10px] text-emerald-400 font-mono">-12ms</span>
+
+          <div className="bg-[#18181B] p-3 rounded-xl border border-[#27272A] space-y-1">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Availability</span>
+            <p className="font-heading text-lg sm:text-xl font-bold text-white tracking-tight">99.99%</p>
+            <span className="text-[10px] text-emerald-400 font-mono">Zero degraded zones</span>
           </div>
         </div>
 
-        {/* Visual Simulated Bar Chart */}
-        <div className="bg-zinc-900/70 p-3 rounded-xl border border-zinc-800 space-y-2">
-          <div className="flex justify-between items-center text-[10px] font-mono text-zinc-400">
-            <span>Throughput Activity</span>
-            <span>Peak: 4.8k req/s</span>
+        {/* Real-looking Routing Table */}
+        <div className="bg-[#18181B] rounded-xl border border-[#27272A] p-3 space-y-2 text-xs">
+          <div className="flex items-center justify-between text-[10px] text-zinc-500 border-b border-[#27272A] pb-1.5">
+            <span>ENDPOINT ROUTE</span>
+            <span>METHOD</span>
+            <span>STATUS</span>
+            <span>LATENCY</span>
           </div>
-          <div className="flex items-end justify-between gap-1.5 h-12 pt-2">
-            {[40, 65, 55, 80, 70, 95, 85, 100, 75, 90, 80, 100].map((val, i) => (
-              <div
-                key={i}
-                className="flex-1 bg-zinc-800 hover:bg-lime-accent/80 transition-colors rounded-t-sm"
-                style={{ height: `${val}%` }}
-              />
-            ))}
+          <div className="space-y-1.5 text-[11px]">
+            <div className="flex items-center justify-between text-zinc-300">
+              <span className="text-zinc-200">/v1/telemetry/events</span>
+              <span className="text-indigo-accent text-[10px]">POST</span>
+              <span className="text-emerald-400 text-[10px]">200 OK</span>
+              <span className="text-zinc-400">19ms</span>
+            </div>
+            <div className="flex items-center justify-between text-zinc-300">
+              <span className="text-zinc-200">/v1/auth/session</span>
+              <span className="text-lime-accent text-[10px]">GET</span>
+              <span className="text-emerald-400 text-[10px]">200 OK</span>
+              <span className="text-zinc-400">14ms</span>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Mockup Bottom Status */}
-      <div className="pt-2.5 border-t border-zinc-800 flex items-center justify-between text-[11px] font-mono text-zinc-500">
-        <span>Region: ap-southeast-1</span>
-        <span className="text-zinc-400">Synced: Just now</span>
+      {/* Bottom Status */}
+      <div className="pt-3 border-t border-[#27272A] flex items-center justify-between text-[11px] text-zinc-500">
+        <span>Region: Asia-Pacific (Jakarta · Singapore · Tokyo)</span>
+        <span className="text-zinc-400">Concept Application UI</span>
       </div>
     </div>
   );
