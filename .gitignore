@@ -33,3 +33,4 @@ dist-ssr
 
 # Local agent/tool state
 .commandcode/
+.codegraph/
