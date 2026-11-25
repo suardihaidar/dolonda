@@ -24,8 +24,8 @@ Follow-up to the 0.2.0 anti-slop baseline: arbitrary colour literals replaced wi
 - **`Hero.tsx`** — status row `text-xs` → `text-sm`; stack line moved from `text-indigo-accent` to `text-ink-muted font-medium`.
 - **`ProjectCard.tsx`** — decorative preview wrapper marked `aria-hidden="true"` so assistive tech skips the simulated UI.
 - **`MobileMenu.tsx`** — removed dead `animate-in slide-in-from-top duration-200` classes (`tailwindcss-animate` is not installed, so the drawer had no animation to begin with).
-- **`Button.tsx`** — `ring-offset` moved out of the shared base styles and scoped per variant (`canvas` for light variants, `ink` for `secondary-dark`) so the offset never paints a dark halo on the light page; the light-surface variants now use a high-contrast `ink` ring instead of `lime-accent`, which only reaches 1.15:1 against the canvas.
-- **Build:** 0 TypeScript errors · 293ms · 55.34 kB gzip JS · 5.06 kB gzip CSS.
+- **`Button.tsx`** — **deleted.** It was never imported anywhere; every button in the app is styled inline. Its variants had also drifted (focus rings, ring offsets) since nothing exercised them. Also corrected the `docs/ARCHITECTURE.md` file tree and component diagram, which still listed the already-deleted `Container.tsx`, `ServiceCard.tsx`, and `TechBadge.tsx`.
+- **Build:** 0 TypeScript errors · 416ms · 55.34 kB gzip JS · 4.96 kB gzip CSS (CSS down 0.10 kB from the removed button variants).
 
 ## [0.2.0] — 2026-11-21
 

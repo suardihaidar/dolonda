@@ -86,8 +86,7 @@ dolonda/
 │   │   ├── layout/
 │   │   │   ├── Navbar.tsx
 │   │   │   ├── MobileMenu.tsx
-│   │   │   ├── Footer.tsx
-│   │   │   └── Container.tsx
+│   │   │   └── Footer.tsx
 │   │   ├── sections/
 │   │   │   ├── Hero.tsx
 │   │   │   ├── SelectedWork.tsx
@@ -96,10 +95,8 @@ dolonda/
 │   │   │   ├── TechStack.tsx
 │   │   │   └── Contact.tsx
 │   │   └── ui/
-│   │       ├── Button.tsx
 │   │       ├── ProjectCard.tsx
-│   │       ├── ServiceCard.tsx
-│   │       ├── TechBadge.tsx
+│   │       ├── ProjectPreviewMockup.tsx
 │   │       └── SectionHeading.tsx
 │   ├── data/                   # Decoupled static content (Single Source of Truth)
 │   │   ├── navigation.ts
@@ -146,11 +143,10 @@ graph TD
     Main --> Hero[sections/Hero.tsx]
     Main --> SelectedWork[sections/SelectedWork.tsx]
     SelectedWork --> ProjectCard[ui/ProjectCard.tsx]
+    ProjectCard --> ProjectPreviewMockup[ui/ProjectPreviewMockup.tsx]
     Main --> Services[sections/Services.tsx]
-    Services --> ServiceCard[ui/ServiceCard.tsx]
     Main --> About[sections/About.tsx]
     Main --> TechStack[sections/TechStack.tsx]
-    TechStack --> TechBadge[ui/TechBadge.tsx]
     Main --> Contact[sections/Contact.tsx]
     App --> Footer[layout/Footer.tsx]
 
@@ -163,7 +159,7 @@ graph TD
 ```
 
 ### Data Flow Patterns:
-1. **Unidirectional Props:** Data flows strictly downward from typed data fixtures into container sections, which pass individual items into pure UI components (`ProjectCard`, `ServiceCard`, `TechBadge`).
+1. **Unidirectional Props:** Data flows strictly downward from typed data fixtures into container sections, which pass individual items into pure UI components (`ProjectCard`, `ProjectPreviewMockup`).
 2. **Local Interactive State:** State is limited to local view concerns:
    - `Navbar`: Mobile drawer toggle (`isMenuOpen: boolean`) and scroll position detection for header background blur (`isScrolled: boolean`).
    - `Contact`: Copy-to-clipboard status feedback (`copied: boolean`).
