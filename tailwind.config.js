@@ -15,7 +15,7 @@ export default {
         ink: {
           DEFAULT: '#202020', // Deep charcoal typography & dark surfaces
           muted: '#52504C',   // Balanced editorial body text
-          subtle: '#827E77',  // Technical metadata & secondary labels
+          subtle: '#6E6A63',  // Technical metadata & secondary labels (WCAG AA on canvas)
         },
         lime: {
           accent: '#C7F36B', // Electric lime — surgical focal accent

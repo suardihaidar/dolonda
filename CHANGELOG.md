@@ -7,6 +7,26 @@ Commit messages serve as the primary identifiers for each recorded entry.
 
 ---
 
+## [0.2.1] — 2026-11-25
+
+### Design Token Discipline & Accessibility Pass
+
+Follow-up to the 0.2.0 anti-slop baseline: arbitrary colour literals replaced with design-system tokens, and a WCAG AA contrast audit applied to metadata text.
+
+- **`tailwind.config.js`** — darkened `ink.subtle` from `#827E77` → `#6E6A63` so metadata labels clear WCAG AA (~4.85:1) against the warm canvas instead of ~3.64:1.
+- **`ProjectPreviewMockup.tsx`**
+  - Replaced every arbitrary hex value with design tokens (`canvas-subtle`, `canvas`, `ink`, `ink-muted`, `border-subtle`, `border-dark`) across both the Bali Villa and SaaS telemetry mockups.
+  - Dark SaaS mockup now derives its full palette from `bg-ink` / `text-canvas` opacity steps instead of `zinc-*` and `#18181B` literals; inner panes raised to `canvas/10` so their `border-dark` outlines stay visible.
+  - Bali mockup inner room cards use the elevated `canvas-card` token so they separate from the `canvas-subtle` container.
+  - Promoted the Bali mockup inner heading from `h4` → `h3` for a valid heading order.
+  - Telemetry success/delta accents (`emerald-400/700`) swapped for `lime-accent`; HTTP method labels (`sky-400`) swapped for `indigo-accent`.
+- **`Contact.tsx`** — `zinc-400/500/600` replaced with `text-canvas` opacity steps; body copy set to `text-canvas/75` to keep it visually subordinate to the display headline. The email-copy button keeps its `aria-label` because its visible text alone does not convey the copy action.
+- **`Hero.tsx`** — status row `text-xs` → `text-sm`; stack line moved from `text-indigo-accent` to `text-ink-muted font-medium`.
+- **`ProjectCard.tsx`** — decorative preview wrapper marked `aria-hidden="true"` so assistive tech skips the simulated UI.
+- **`MobileMenu.tsx`** — removed dead `animate-in slide-in-from-top duration-200` classes (`tailwindcss-animate` is not installed, so the drawer had no animation to begin with).
+- **`Button.tsx`** — `ring-offset` moved out of the shared base styles and scoped per variant (`canvas` for light variants, `ink` for `secondary-dark`) so the offset never paints a dark halo on the light page; the light-surface variants now use a high-contrast `ink` ring instead of `lime-accent`, which only reaches 1.15:1 against the canvas.
+- **Build:** 0 TypeScript errors · 293ms · 55.34 kB gzip JS · 5.06 kB gzip CSS.
+
 ## [0.2.0] — 2026-11-21
 
 ### Anti-Slop Phase 2–7 Full Editorial Transformation

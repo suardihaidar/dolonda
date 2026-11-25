@@ -63,10 +63,10 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Minimal status row */}
-        <div className="pt-6 border-t border-border-subtle flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs text-ink-subtle">
+        <div className="pt-6 border-t border-border-subtle flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-sm text-ink-subtle">
           <span>Available for new engagements</span>
           <span>Remote · Worldwide</span>
-          <span className="text-indigo-accent">React · TypeScript · Tailwind CSS</span>
+          <span className="text-ink-muted font-medium">React · TypeScript · Tailwind CSS</span>
         </div>
       </div>
     </section>

@@ -21,7 +21,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         } gap-0 lg:gap-0 items-stretch border border-border-subtle`}
       >
         {/* Visual canvas — full bleed, no rounded corners */}
-        <div className="lg:w-[55%] flex-shrink-0 overflow-hidden bg-canvas-subtle">
+        <div className="lg:w-[55%] flex-shrink-0 overflow-hidden bg-canvas-subtle" aria-hidden="true">
           <div className="w-full h-full transition-transform duration-500 group-hover:scale-[1.02]">
             <ProjectPreviewMockup projectId={project.id} />
           </div>

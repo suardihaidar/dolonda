@@ -51,7 +51,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }
       {/* Drawer content */}
       <div
         ref={menuRef}
-        className="relative z-10 w-full bg-canvas border-b border-border-subtle p-6 pt-24 shadow-xl flex flex-col gap-6 animate-in slide-in-from-top duration-200"
+        className="relative z-10 w-full bg-canvas border-b border-border-subtle p-6 pt-24 shadow-xl flex flex-col gap-6"
       >
         <nav className="flex flex-col space-y-4" aria-label="Mobile Navigation Links">
           {items.map((item, index) => (
