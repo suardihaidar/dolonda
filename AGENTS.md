@@ -129,13 +129,10 @@ Stage 5: Production Deployment
 
 ## 7. Command Output (rtk)
 
-<!-- rtk-instructions v2 -->
-# Command output
+Command Code has no rtk shim or hook here, so condensing only happens when a command is explicitly routed through it. Prefix shell commands with `rtk` when a subcommand exists:
 
-Command output here is condensed to save tokens, keeping every signal and
-dropping costly noise. Treat it as the complete result: run commands
-normally, and batch related commands into one call to avoid extra turns.
-Truncated results state their recovery path in their own output. Re-run a
-command as `rtk bypass <cmd>` only when its result is unusable: empty when
-output was clearly expected, contradicting its exit code, or garbled.
-<!-- /rtk-instructions -->
+- `rtk git <cmd>`, `rtk npm run <script>`, `rtk tsc`, `rtk lint`, `rtk test`
+- `rtk ls`, `rtk tree`, `rtk find`, `rtk grep`, `rtk read`, `rtk diff`
+- `rtk err <cmd>` / `rtk summary <cmd>` for anything without a dedicated subcommand
+
+Treat condensed output as the complete result; batch related commands into one call. Re-run as `rtk bypass <cmd>` only when output is unusable: empty when it clearly should not be, contradicting the exit code, or garbled.
