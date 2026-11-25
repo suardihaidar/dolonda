@@ -124,3 +124,18 @@ Stage 5: Production Deployment
 2. **When introducing new syntax or patterns:** Provide a brief 2–3 sentence breakdown highlighting the modern standard being used.
 3. **When identifying issues:** Explain the symptom, root cause, and standard fix rather than making silent adjustments.
 4. **At the end of a section:** Offer review prompts or verification checks (e.g., "Check responsiveness at 375px width" or "Test Tab key focus navigation").
+
+---
+
+## 7. Command Output (rtk)
+
+<!-- rtk-instructions v2 -->
+# Command output
+
+Command output here is condensed to save tokens, keeping every signal and
+dropping costly noise. Treat it as the complete result: run commands
+normally, and batch related commands into one call to avoid extra turns.
+Truncated results state their recovery path in their own output. Re-run a
+command as `rtk bypass <cmd>` only when its result is unusable: empty when
+output was clearly expected, contradicting its exit code, or garbled.
+<!-- /rtk-instructions -->
