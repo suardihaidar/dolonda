@@ -5,8 +5,6 @@ Commit messages serve as the primary identifiers for each recorded entry.
 
 ---
 
----
-
 ## [0.2.2] — 2026-11-26
 
 ### Navigation Scroll Behaviour & Contact Details
@@ -35,27 +33,101 @@ Commit messages serve as the primary identifiers for each recorded entry.
   - **Details:** Keeps local codegraph index state out of version control.
   - **Changes:** Added the `.codegraph` entry to `.gitignore`.
 
+- **Release:** `package.json` version bumped `0.2.1` → `0.2.2`; duplicate `0.2.0` changelog block merged and missing hashes backfilled for `0.2.1`.
+
 ## [0.2.1] — 2026-11-25
 
 ### Design Token Discipline & Accessibility Pass
 
 Follow-up to the 0.2.0 anti-slop baseline: arbitrary colour literals replaced with design-system tokens, and a WCAG AA contrast audit applied to metadata text.
 
-- **`tailwind.config.js`** — darkened `ink.subtle` from `#827E77` → `#6E6A63` so metadata labels clear WCAG AA (~4.85:1) against the warm canvas instead of ~3.64:1.
-- **`ProjectPreviewMockup.tsx`**
-  - Replaced every arbitrary hex value with design tokens (`canvas-subtle`, `canvas`, `ink`, `ink-muted`, `border-subtle`, `border-dark`) across both the Bali Villa and SaaS telemetry mockups.
-  - Dark SaaS mockup now derives its full palette from `bg-ink` / `text-canvas` opacity steps instead of `zinc-*` and `#18181B` literals; inner panes raised to `canvas/10` so their `border-dark` outlines stay visible.
-  - Bali mockup inner room cards use the elevated `canvas-card` token so they separate from the `canvas-subtle` container.
-  - Promoted the Bali mockup inner heading from `h4` → `h3` for a valid heading order.
-  - Telemetry success/delta accents (`emerald-400/700`) swapped for `lime-accent`; HTTP method labels (`sky-400`) swapped for `indigo-accent`.
-- **`Contact.tsx`** — `zinc-400/500/600` replaced with `text-canvas` opacity steps; body copy set to `text-canvas/75` to keep it visually subordinate to the display headline. The email-copy button keeps its `aria-label` because its visible text alone does not convey the copy action.
-- **`Hero.tsx`** — status row `text-xs` → `text-sm`; stack line moved from `text-indigo-accent` to `text-ink-muted font-medium`.
-- **`ProjectCard.tsx`** — decorative preview wrapper marked `aria-hidden="true"` so assistive tech skips the simulated UI.
-- **`MobileMenu.tsx`** — removed dead `animate-in slide-in-from-top duration-200` classes (`tailwindcss-animate` is not installed, so the drawer had no animation to begin with).
-- **`Button.tsx`** — **deleted.** It was never imported anywhere; every button in the app is styled inline. Its variants had also drifted (focus rings, ring offsets) since nothing exercised them. Also corrected the `docs/ARCHITECTURE.md` file tree and component diagram, which still listed the already-deleted `Container.tsx`, `ServiceCard.tsx`, and `TechBadge.tsx`.
-- **Build:** 0 TypeScript errors · 416ms · 55.34 kB gzip JS · 4.96 kB gzip CSS (CSS down 0.10 kB from the removed button variants).
+- **`7cba392`** — `fix(ui): replace arbitrary color literals with design tokens and correct WCAG AA contrast`
+  - **`tailwind.config.js`** — darkened `ink.subtle` from `#827E77` → `#6E6A63` so metadata labels clear WCAG AA (~4.85:1) against the warm canvas instead of ~3.64:1.
+  - **`ProjectPreviewMockup.tsx`**
+    - Replaced every arbitrary hex value with design tokens (`canvas-subtle`, `canvas`, `ink`, `ink-muted`, `border-subtle`, `border-dark`) across both the Bali Villa and SaaS telemetry mockups.
+    - Dark SaaS mockup now derives its full palette from `bg-ink` / `text-canvas` opacity steps instead of `zinc-*` and `#18181B` literals; inner panes raised to `canvas/10` so their `border-dark` outlines stay visible.
+    - Bali mockup inner room cards use the elevated `canvas-card` token so they separate from the `canvas-subtle` container.
+    - Promoted the Bali mockup inner heading from `h4` → `h3` for a valid heading order.
+    - Telemetry success/delta accents (`emerald-400/700`) swapped for `lime-accent`; HTTP method labels (`sky-400`) swapped for `indigo-accent`.
+  - **`Contact.tsx`** — `zinc-400/500/600` replaced with `text-canvas` opacity steps; body copy set to `text-canvas/75` to keep it visually subordinate to the display headline. The email-copy button keeps its `aria-label` because its visible text alone does not convey the copy action.
+  - **`Hero.tsx`** — status row `text-xs` → `text-sm`; stack line moved from `text-indigo-accent` to `text-ink-muted font-medium`.
+  - **`ProjectCard.tsx`** — decorative preview wrapper marked `aria-hidden="true"` so assistive tech skips the simulated UI.
+  - **`MobileMenu.tsx`** — removed dead `animate-in slide-in-from-top duration-200` classes (`tailwindcss-animate` is not installed, so the drawer had no animation to begin with).
+  - **Build:** 0 TypeScript errors · 416ms · 55.34 kB gzip JS · 4.96 kB gzip CSS (CSS down 0.10 kB).
+
+- **`858fb40`** — `chore: remove unused Button component`
+  - **Details:** Deleted `src/components/ui/Button.tsx`. It was never imported anywhere; every button in the app is styled inline, and its variants had drifted (focus rings, ring offsets) since nothing exercised them.
+  - **Changes:** Also corrected the `docs/ARCHITECTURE.md` file tree and component diagram, which still listed the already-deleted `Container.tsx`, `ServiceCard.tsx`, and `TechBadge.tsx`.
 
 ## [0.2.0] — 2026-11-21
+
+### Project Foundation & Architecture (Stage 1 & 2)
+
+- **`df3bfa1`** — `docs: establish project foundation and architecture`
+  - **Details:** Initial repository commit establishing governing architecture and product specifications.
+  - **Changes:** Created `AGENTS.md`, `README.md`, `docs/PROJECT_BRIEF.md`, `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN_SYSTEM.md`, `tasks/MVP.md`, and `tasks/BACKLOG.md`.
+
+- **`8a806c2`** — `feat: complete stage 2 project foundation with vite, react, typescript, and tailwind`
+  - **Details:** Established project scaffolding, dependencies, build toolchain, and design token integration.
+  - **Changes:** Configured `package.json`, `tsconfig.json` (strict mode), `vite.config.ts`, `tailwind.config.js` (custom tokens for canvas, ink, lime, indigo), and strongly typed data models in `src/data/`.
+
+### Section Implementations (Stage 3)
+
+- **`d38addf`** — `feat: implement accessible sticky navbar and mobile menu drawer`
+  - **Details:** Implemented the responsive navigation header and mobile drawer.
+  - **Changes:** Added `src/components/layout/Navbar.tsx` with scroll-activated backdrop blur and `src/components/layout/MobileMenu.tsx` with keyboard focus management and Escape key dismissal.
+
+- **`ae706ee`** — `feat: implement editorial hero section and reusable button primitive`
+  - **Details:** Constructed the primary hero section and the foundational polymorphic button component.
+  - **Changes:** Added `src/components/sections/Hero.tsx` with live availability status badge, display typography, and dual CTAs; created `src/components/ui/Button.tsx`.
+
+- **`3d0ed42`** — `feat: implement selected work section with concept cards and visual mockups`
+  - **Details:** Built the portfolio showcase for *Bali Villa Website* and *SaaS Analytics Dashboard* concept studies.
+  - **Changes:** Created `src/components/sections/SelectedWork.tsx`, `src/components/ui/ProjectCard.tsx`, and `src/components/ui/ProjectPreviewMockup.tsx` featuring code-rendered responsive mockups, strict concept tags, and the Dolonda Integrity Guarantee.
+
+- **`db5ccab`** — `feat: implement services section with 3 core offerings and problem-solving focus`
+  - **Details:** Formatted the three core service offerings (Website Development, Frontend Development, UI Improvements) into an editorial 3-column layout.
+  - **Changes:** Created `src/components/sections/Services.tsx` and `src/components/ui/ServiceCard.tsx` with `JetBrains Mono` numbering (`01`, `02`, `03`) and deliverables checklists.
+
+- **`711f50a`** — `feat: implement about section highlighting founder background, ethos, and principles`
+  - **Details:** Introduced Suardi as the founder and creative developer behind Dolonda, emphasizing >7 years of software engineering experience.
+  - **Changes:** Created `src/components/sections/About.tsx` featuring the three core operating principles (Rigor, Craft, Clarity), founder monogram card, and authentic ethos pull quote.
+
+- **`27568d6`** — `feat: implement vetted technology stack section with responsive badges`
+  - **Details:** Built the technology capabilities grid showcasing 10 production-vetted tools (React, React Native, TypeScript, Tailwind CSS, etc.).
+  - **Changes:** Added `src/components/sections/TechStack.tsx` and `src/components/ui/TechBadge.tsx` featuring a responsive 5-column layout and the "Zero Bloat Philosophy" callout.
+
+- **`8b8cecc`** — `feat: implement high-impact contact section with email clipboard utility and placeholders`
+  - **Details:** Built the primary contact section as an editorial Charcoal card with Warm Off-White typography and Electric Lime highlights.
+  - **Changes:** Created `src/components/sections/Contact.tsx` with a 1-click clipboard email copy utility, direct `mailto:` link, WhatsApp prefilled chat button, and social placeholders.
+
+- **`e684a4f`** — `feat: complete stage 3 section implementation with editorial footer and root assembly`
+  - **Details:** Completed Stage 3 by implementing the editorial footer and assembling all 8 sections into `App.tsx`.
+  - **Changes:** Added `src/components/layout/Footer.tsx` with smooth back-to-top scroll trigger, quick navigation links, social placeholders, and copyright notice.
+
+### Fixes & Refinements
+
+- **`a602157`** — `feat: complete quality refinement audit and cloudflare pages deployment verification`
+  - **Details:** Completed Stage 4 (Quality & Refinement Audit) and Stage 5 (Cloudflare Pages deployment verification).
+  - **Changes:** Enhanced `index.html` with canonical URL, theme color, Open Graph, and Twitter Cards; created `public/robots.txt`; confirmed static bundle compiles cleanly into `dist/`.
+
+- **`5f9b153`** — `fix(contact): resolve CSS cascade collision on whatsapp button in dark card`
+  - **Details:** Resolved a Tailwind CSS specificity conflict where `.text-ink` overrode `.text-canvas` on dark surfaces, causing the WhatsApp button text to be invisible (black-on-black).
+  - **Changes:** Added `variant="secondary-dark"` in `Button.tsx`, forwarded `props` to anchor elements, and added an external link icon.
+
+### Anti-Slop First Pass
+
+- **`12cf55f`** — `refactor: anti-ui-slop design system review and layout refinement`
+  - **Details:** Comprehensive audit and elimination of generic AI visual tropes in accordance with anti-slop principles. Superseded by the Phase 2–7 transformation below, but kept for history.
+  - **Changes:**
+    - Replaced generic pulsing green ping badge in Hero with clean monospace metadata coordinates.
+    - Overhauled SaaS concept mockup to replace fake, cliché bar graphs ("Vortex Pulse") with an authentic developer telemetry routing table and latency diagnostics.
+    - Elevated luxury hospitality mockup (Villa Asmara) with refined architectural typography framing.
+    - Eliminated generic `✓` checkmarks in Services cards in favor of clean editorial dashes (`—`).
+    - Removed nested "cards-inside-cards" in the About section in favor of a clean, structured typographic table with hairline dividers.
+    - Cleaned up Technology Stack badges into cohesive engineering clusters.
+    - Removed blurred neon radial gradient blobs (`blur-3xl`) from the Contact section for crisp contrast.
+    - Codified permanent anti-slop guidelines in `docs/ANTI_SLOP_GUIDELINES.md` and updated `AGENTS.md`.
 
 ### Anti-Slop Phase 2–7 Full Editorial Transformation
 
@@ -72,6 +144,7 @@ Follow-up to the 0.2.0 anti-slop baseline: arbitrary colour literals replaced wi
     - **Build:** 0 TypeScript errors · 721ms · 55.5kB gzip JS.
 
 ### Anti-Slop Refinement (Fixes)
+
 - **`de37b9f`** — `fix: remove all decorative lime-accent slop dots and stray accent misuse`
   - **Details:** Comprehensive cleanup of decorative lime-accent dots across all components, restoring strict accent discipline as per anti-slop guidelines.
   - **Changes:**
@@ -93,78 +166,9 @@ Follow-up to the 0.2.0 anti-slop baseline: arbitrary colour literals replaced wi
     - **ProjectPreviewMockup:** Refined accent usage in brand block
 
 ### Build Toolchain Updates
+
 - **`a35cf25`** — `chore: upgrade vite and @vitejs/plugin-react to latest version`
   - **Details:** Updated build toolchain dependencies to latest stable versions.
   - **Changes:**
     - **package.json:** Upgraded `vite` and `@vitejs/plugin-react` to latest versions
     - **package-lock.json:** Updated dependency tree (557 insertions, 1151 deletions)
-
----
-
-### Previous Anti-Slop First Pass (Superseded)
-- **`12cf55f`** — `refactor: anti-ui-slop design system review and layout refinement`
-  - **Details:** Comprehensive audit and elimination of generic AI visual tropes in accordance with anti-slop principles.
-  - **Changes:**
-    - Replaced generic pulsing green ping badge in Hero with clean monospace metadata coordinates.
-    - Overhauled SaaS concept mockup to replace fake, cliché bar graphs ("Vortex Pulse") with an authentic developer telemetry routing table and latency diagnostics.
-    - Elevated luxury hospitality mockup (Villa Asmara) with refined architectural typography framing.
-    - Eliminated generic `✓` checkmarks in Services cards in favor of clean editorial dashes (`—`).
-    - Removed nested "cards-inside-cards" in the About section in favor of a clean, structured typographic table with hairline dividers.
-    - Cleaned up Technology Stack badges into cohesive engineering clusters.
-    - Removed blurred neon radial gradient blobs (`blur-3xl`) from the Contact section for crisp contrast.
-    - Codified permanent anti-slop guidelines in `docs/ANTI_SLOP_GUIDELINES.md` and updated `AGENTS.md`.
-
----
-
-## [0.2.0] — 2026-11-21
-
-### Fixes & Refinements
-- **`5f9b153`** — `fix(contact): resolve CSS cascade collision on whatsapp button in dark card`
-  - **Details:** Resolved a Tailwind CSS specificity conflict where `.text-ink` overrode `.text-canvas` on dark surfaces, causing the WhatsApp button text to be invisible (black-on-black).
-  - **Changes:** Added `variant="secondary-dark"` in `Button.tsx`, forwarded `props` to anchor elements, and added an external link icon.
-
-- **`a602157`** — `feat: complete quality refinement audit and cloudflare pages deployment verification`
-  - **Details:** Completed Stage 4 (Quality & Refinement Audit) and Stage 5 (Cloudflare Pages deployment verification).
-  - **Changes:** Enhanced `index.html` with canonical URL, theme color, Open Graph, and Twitter Cards; created `public/robots.txt`; confirmed static bundle compiles cleanly into `dist/`.
-
-### Section Implementations (Stage 3)
-- **`e684a4f`** — `feat: complete stage 3 section implementation with editorial footer and root assembly`
-  - **Details:** Completed Stage 3 by implementing the editorial footer and assembling all 8 sections into `App.tsx`.
-  - **Changes:** Added `src/components/layout/Footer.tsx` with smooth back-to-top scroll trigger, quick navigation links, social placeholders, and copyright notice.
-
-- **`8b8cecc`** — `feat: implement high-impact contact section with email clipboard utility and placeholders`
-  - **Details:** Built the primary contact section as an editorial Charcoal card with Warm Off-White typography and Electric Lime highlights.
-  - **Changes:** Created `src/components/sections/Contact.tsx` with a 1-click clipboard email copy utility, direct `mailto:` link, WhatsApp prefilled chat button, and social placeholders.
-
-- **`27568d6`** — `feat: implement vetted technology stack section with responsive badges`
-  - **Details:** Built the technology capabilities grid showcasing 10 production-vetted tools (React, React Native, TypeScript, Tailwind CSS, etc.).
-  - **Changes:** Added `src/components/sections/TechStack.tsx` and `src/components/ui/TechBadge.tsx` featuring a responsive 5-column layout and the "Zero Bloat Philosophy" callout.
-
-- **`711f50a`** — `feat: implement about section highlighting founder background, ethos, and principles`
-  - **Details:** Introduced Suardi as the founder and creative developer behind Dolonda, emphasizing >7 years of software engineering experience.
-  - **Changes:** Created `src/components/sections/About.tsx` featuring the three core operating principles (Rigor, Craft, Clarity), founder monogram card, and authentic ethos pull quote.
-
-- **`db5ccab`** — `feat: implement services section with 3 core offerings and problem-solving focus`
-  - **Details:** Formatted the three core service offerings (Website Development, Frontend Development, UI Improvements) into an editorial 3-column layout.
-  - **Changes:** Created `src/components/sections/Services.tsx` and `src/components/ui/ServiceCard.tsx` with `JetBrains Mono` numbering (`01`, `02`, `03`) and deliverables checklists.
-
-- **`3d0ed42`** — `feat: implement selected work section with concept cards and visual mockups`
-  - **Details:** Built the portfolio showcase for *Bali Villa Website* and *SaaS Analytics Dashboard* concept studies.
-  - **Changes:** Created `src/components/sections/SelectedWork.tsx`, `src/components/ui/ProjectCard.tsx`, and `src/components/ui/ProjectPreviewMockup.tsx` featuring code-rendered responsive mockups, strict concept tags, and the Dolonda Integrity Guarantee.
-
-- **`ae706ee`** — `feat: implement editorial hero section and reusable button primitive`
-  - **Details:** Constructed the primary hero section and the foundational polymorphic button component.
-  - **Changes:** Added `src/components/sections/Hero.tsx` with live availability status badge, display typography, and dual CTAs; created `src/components/ui/Button.tsx`.
-
-- **`d38addf`** — `feat: implement accessible sticky navbar and mobile menu drawer`
-  - **Details:** Implemented the responsive navigation header and mobile drawer.
-  - **Changes:** Added `src/components/layout/Navbar.tsx` with scroll-activated backdrop blur and `src/components/layout/MobileMenu.tsx` with keyboard focus management and Escape key dismissal.
-
-### Project Foundation & Architecture (Stage 1 & 2)
-- **`8a806c2`** — `feat: complete stage 2 project foundation with vite, react, typescript, and tailwind`
-  - **Details:** Established project scaffolding, dependencies, build toolchain, and design token integration.
-  - **Changes:** Configured `package.json`, `tsconfig.json` (strict mode), `vite.config.ts`, `tailwind.config.js` (custom tokens for canvas, ink, lime, indigo), and strongly typed data models in `src/data/`.
-
-- **`df3bfa1`** — `docs: establish project foundation and architecture`
-  - **Details:** Initial repository commit establishing governing architecture and product specifications.
-  - **Changes:** Created `AGENTS.md`, `README.md`, `docs/PROJECT_BRIEF.md`, `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN_SYSTEM.md`, `tasks/MVP.md`, and `tasks/BACKLOG.md`.
