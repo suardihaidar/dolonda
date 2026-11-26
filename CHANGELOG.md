@@ -7,6 +7,34 @@ Commit messages serve as the primary identifiers for each recorded entry.
 
 ---
 
+## [0.2.2] — 2026-11-26
+
+### Navigation Scroll Behaviour & Contact Details
+
+- **`afd25c7`** — `fix(nav): smooth-scroll anchors and clear hash on wordmark home click`
+  - **Details:** Anchor navigation previously jumped instantly because `scroll-behavior` was never enabled. The wordmark also used `href="/"`, which triggered a full document reload — losing position with no smooth transition.
+  - **Changes:**
+    - **`styles/index.css`** — added `scroll-behavior: smooth` and `scroll-padding-top: 5rem` to `html`, so all in-page links animate and the 80px sticky navbar no longer covers section headings. The existing `prefers-reduced-motion` block still forces `auto`.
+    - **`Navbar.tsx`** — wordmark keeps `href="/"` for no-JS and modifier-click (new tab) behaviour, but intercepts plain left-clicks: `preventDefault()`, clears a stale hash with `history.replaceState()` (no reload, no history entry), then `window.scrollTo({ top: 0 })` with a reduced-motion check.
+
+- **`ee591ba`** — `fix: adjust readme and contact placeholder`
+  - **Details:** Replaced placeholder contact details with the founder's real destinations and corrected the clone URL.
+  - **Changes:** `data/contact.ts` now uses `hello@dolonda.my.id`, the real WhatsApp number, `linkedin.com/in/muhammad-suardi`, and `github.com/suardihaidar`; removed the stale "Placeholder links · pending confirmation" note from `Contact.tsx`; README clone command points at `suardihaidar/dolonda`.
+
+### Documentation & Tooling
+
+- **`2958ce7`** — `docs: document explicit rtk command routing in AGENTS.md`
+  - **Details:** Replaced the earlier rtk hook wiring with explicit per-command routing instructions, since no hook is installed.
+  - **Changes:** Documented the `rtk git|npm|tsc|lint|test|ls|tree|find|grep|read|diff` subcommands and the `rtk bypass` escape hatch for unusable output.
+
+- **`b5b2b2e`** — `chore: wire rtk output instructions into AGENTS.md`
+  - **Details:** First pass at wiring token-efficient command output into the agent workflow.
+  - **Changes:** Added `.rtk/filters.toml` and an rtk output section to `AGENTS.md`.
+
+- **`bc91b36`** — `chore: add .codegraph local state to .gitignore`
+  - **Details:** Keeps local codegraph index state out of version control.
+  - **Changes:** Added the `.codegraph` entry to `.gitignore`.
+
 ## [0.2.1] — 2026-11-25
 
 ### Design Token Discipline & Accessibility Pass
