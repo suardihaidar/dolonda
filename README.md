@@ -87,7 +87,7 @@ dolonda/
 
 ```bash
 # 1. Clone repository (if applicable)
-git clone https://github.com/suard/dolonda.git
+git clone https://github.com/suardihaidar/dolonda
 cd dolonda
 
 # 2. Install dependencies (Stage 2)

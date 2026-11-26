@@ -106,7 +106,6 @@ export const Contact: React.FC = () => {
               LinkedIn ↗
             </a>
           </div>
-          <span className="text-canvas/60">Placeholder links · pending confirmation</span>
         </div>
       </div>
     </section>
