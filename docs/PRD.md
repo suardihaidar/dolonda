@@ -116,11 +116,11 @@ The MVP is structured as a responsive single-page application with smooth sectio
 - **Sticky / Fixed Behavior:** Remains accessible at top with subtle background backdrop filter when scrolled.
 
 ### 5.2 Hero Section (`Hero`)
-- **Headline:** *"Building thoughtful digital experiences."* (Space Grotesk, bold editorial sizing).
+- **Headline:** *"Building thoughtful digital experiences."* (Geist, bold editorial sizing).
 - **Supporting Text:** *"I'm Suardi, an independent creative developer with more than seven years of professional software engineering experience. I help businesses turn ideas into responsive websites and intuitive web applications."*
 - **Primary Call to Action:** Button: `Explore My Work` (scrolls to `#work`).
 - **Secondary Call to Action:** Button/Link: `Let's Talk` (scrolls to `#contact`).
-- **Visual Design:** Editorial composition, generous whitespace, subtle background accents utilizing Warm Off-White (`#F5F3EE`), Charcoal (`#202020`), and subtle Electric Lime (`#C7F36B`) highlights.
+- **Visual Design:** Editorial composition, generous whitespace, subtle background accents utilizing Warm Off-White (`#FCFAF5`), Charcoal (`#202020`), and subtle Electric Lime (`#C7F36B`) highlights.
 
 ### 5.3 Selected Work Section (`SelectedWork`)
 Showcases two high-polish concept projects, clearly labeled as **Concept Project** to ensure 100% honesty.
@@ -129,7 +129,7 @@ Showcases two high-polish concept projects, clearly labeled as **Concept Project
    - *Category:* Hospitality Landing Page (Concept).
    - *Tech:* React, TypeScript, Tailwind CSS.
    - *Key Features:* Responsive landing page, property showcase, accommodation highlights, booking CTA, WhatsApp contact integration placeholder.
-   - *Visuals:* Card with rounded preview frame, tag badges, and live demo / code repository placeholder links.
+   - *Visuals:* Square hairline-framed preview spread (radius reserved for CTAs only), tag badges, and live demo / code repository placeholder links.
 2. **Project 02 — SaaS Dashboard**
    - *Category:* Web Application Interface (Concept).
    - *Tech:* React, TypeScript, Tailwind CSS.
@@ -139,7 +139,7 @@ Showcases two high-polish concept projects, clearly labeled as **Concept Project
 ### 5.4 Services Section (`Services`)
 - Three distinct service cards highlighting **01 Website Development**, **02 Frontend Development**, and **03 UI Improvements**.
 - Concise, problem-solution copy addressing pain points directly.
-- Monospace numbering (`01`, `02`, `03`) using `JetBrains Mono`.
+- Monospace numbering (`01`, `02`, `03`) using `Geist Mono`.
 
 ### 5.5 About Section (`About`)
 - Introduces **Suardi** as the founder and lead developer behind Dolonda.
@@ -227,8 +227,8 @@ Showcases two high-polish concept projects, clearly labeled as **Concept Project
 | Personal brand first, future studio ready | Section 1.3 | Brand tokens & naming decoupled from individual vs agency |
 | No fake team, clients, or awards | Section 1.3, 5.5 | Explicit founder attribution; authentic factual narrative |
 | 3 Specific services | Section 4 | `src/data/services.ts` -> `<Services />` |
-| Editorial design, Space Grotesk / Inter / JetBrains Mono | Section 5, DESIGN_SYSTEM | Tailwind font family extensions & Google Fonts |
-| Warm off-white, Charcoal, Electric lime, Indigo | Section 5, DESIGN_SYSTEM | Tailwind custom color palette tokens |
+| Editorial design, Geist / Geist Mono | Section 5, DESIGN_SYSTEM | Tailwind font family extensions & Google Fonts |
+| Warm off-white, Charcoal, Electric lime, Blue | Section 5, DESIGN_SYSTEM | Tailwind custom color palette tokens |
 | 2 Concept projects (Bali Villa, SaaS Dashboard) | Section 5.3 | `src/data/projects.ts` -> `<ProjectCard />` with `isConcept: true` |
 | Cloudflare Pages deployment (no Vercel) | Section 6.1 | Vite static build (`dist/`) output |
 | Incremental section-by-section workflow | Section 5 | `tasks/MVP.md` staged execution |

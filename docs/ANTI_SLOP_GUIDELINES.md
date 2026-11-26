@@ -28,13 +28,13 @@ When unguided, AI models converge on generic design averages: bloated card stack
 ## 3. Editorial Visual Hierarchy
 
 1. **Typographic Contrast Over Decorative Fluff:**
-   * **Display (Space Grotesk):** Scaled aggressively (`text-4xl` to `text-7xl` / `5.25rem`), tight negative tracking (`tracking-tight`), and strong visual anchors.
-   * **Body (Inter):** Generous line height (`leading-relaxed`), natural reading rhythm, and high contrast against the Warm Off-White canvas (`#F5F3EE`).
-   * **Monospace Metadata (JetBrains Mono):** Crisp uppercase coordinates, section indexes (`01 / Work`), and technical labels.
+   * **Display (Geist):** Scaled aggressively (`text-4xl` to `text-7xl` / `5.25rem`), tight negative tracking (`tracking-tight`), and strong visual anchors.
+   * **Body (Geist):** Generous line height (`leading-relaxed`), natural reading rhythm, and high contrast against the Warm Off-White canvas (`#FCFAF5`).
+   * **Monospace Metadata (Geist Mono):** Crisp uppercase coordinates, section indexes (`01 / Work`), and technical labels.
 2. **Intentional Palette Discipline:**
-   * **Base:** Warm Off-White (`#F5F3EE`) for the canvas and Charcoal (`#202020`) for typography.
+   * **Base:** Warm Off-White (`#FCFAF5`) for the canvas and Charcoal (`#202020`) for typography.
    * **Surgical Accents:** Electric Lime (`#C7F36B`) is reserved exclusively for focal points (wordmark dot, primary CTA hover, core badges). Never used as large wash backgrounds.
-   * **Secondary Accent:** Indigo (`#7067E8`) used for technical badges and category labels.
+   * **Secondary Accent:** Blue (`#1D4ED8`) used for technical badges, category labels, and links on light surfaces. On dark surfaces use Blue Light (`#8FB0FF`).
 3. **True Asymmetric Compositions:**
    * Avoid symmetrical 3x3 box grids everywhere. Vary column spans (7-to-5 splits), alternating preview card directions, and structural dividers.
 

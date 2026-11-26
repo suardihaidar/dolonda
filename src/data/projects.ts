@@ -22,7 +22,6 @@ export const projects: Project[] = [
       'Zustand',
     ],
     previewImage: '/work/lorongsatu21-1.webp',
-    previewNote: 'Commissioned client work — pilot deployment',
     gallery: [
       {
         label: 'Kasir / Checkout',
@@ -75,7 +74,6 @@ export const projects: Project[] = [
     architectureNote:
       'Built on a mobile-first grid that scales from a single-column portrait view to a full editorial spread at viewport widths above 1024px. Reservation touchpoints are contextually placed rather than globally repeated — every CTA earns its position in the layout.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    previewNote: 'Concept Project — Not commissioned client work',
     gallery: [
       {
         label: 'Hero & Navigation',

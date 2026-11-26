@@ -35,7 +35,7 @@ export const Services: React.FC = () => {
 
             {/* Title */}
             <div className="md:col-span-4">
-              <h3 className="font-heading text-xl sm:text-2xl font-bold text-ink tracking-tight leading-snug group-hover:text-indigo-accent transition-colors duration-200">
+              <h3 className="font-heading text-xl sm:text-2xl font-bold text-ink tracking-tight leading-snug group-hover:text-blue-accent transition-colors duration-200">
                 {service.title}
               </h3>
             </div>
@@ -52,7 +52,7 @@ export const Services: React.FC = () => {
               {service.deliverables.map((item) => (
                 <span
                   key={item}
-                  className="font-mono text-[11px] text-ink-subtle border border-border-subtle px-2.5 py-1 leading-none"
+                  className="rounded-full font-mono text-[11px] text-ink-subtle border border-border-subtle px-2.5 py-1 leading-none"
                 >
                   {item}
                 </span>
@@ -67,7 +67,7 @@ export const Services: React.FC = () => {
         Have a unique frontend challenge or a Figma file to implement?{' '}
         <a
           href="#contact"
-          className="text-ink font-medium underline underline-offset-4 decoration-border-subtle hover:decoration-ink transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+          className="text-ink font-medium underline underline-offset-4 decoration-border-subtle hover:decoration-ink transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas rounded-sm"
         >
           Discuss it directly →
         </a>

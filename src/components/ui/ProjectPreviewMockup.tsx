@@ -7,7 +7,7 @@ interface ProjectPreviewMockupProps {
 export const ProjectPreviewMockup: React.FC<ProjectPreviewMockupProps> = ({ projectId }) => {
   if (projectId === 'bali-villa') {
     return (
-      <div className="w-full h-full min-h-[320px] sm:min-h-[380px] bg-canvas-subtle text-ink rounded-2xl p-5 sm:p-7 flex flex-col justify-between overflow-hidden border border-border-subtle select-none">
+      <div className="w-full h-full min-h-[320px] sm:min-h-[380px] bg-canvas-subtle text-ink p-5 sm:p-7 flex flex-col justify-between overflow-hidden border border-border-subtle select-none">
         {/* Mockup Header: Minimal Luxury Editorial */}
         <div className="flex items-center justify-between pb-4 border-b border-border-subtle">
           <div className="flex items-baseline gap-2.5">
@@ -73,15 +73,15 @@ export const ProjectPreviewMockup: React.FC<ProjectPreviewMockupProps> = ({ proj
 
   // SaaS Workspace & Telemetry Interface (Grounded, Anti-Slop, No Cheesy Fake Bar Charts)
   return (
-    <div className="w-full h-full min-h-[320px] sm:min-h-[380px] bg-ink text-canvas rounded-2xl p-5 sm:p-7 flex flex-col justify-between overflow-hidden border border-border-dark select-none font-mono">
+    <div className="w-full h-full min-h-[320px] sm:min-h-[380px] bg-ink text-canvas p-5 sm:p-7 flex flex-col justify-between overflow-hidden border border-border-dark select-none font-mono">
       {/* Top Bar: Authentic Developer Console Header */}
       <div className="flex items-center justify-between pb-4 border-b border-border-dark">
         <div className="flex items-center gap-2.5">
-          <div className="w-2 h-2 rounded-sm bg-ink/50" />
+          <div className="w-2 h-2 rounded-full bg-ink/50" />
           <span className="font-heading font-semibold text-xs tracking-wider uppercase text-canvas">
             KINETIC EDGE
           </span>
-          <span className="text-[10px] text-canvas/60 bg-canvas/5 px-2 py-0.5 rounded border border-border-dark">
+          <span className="text-[10px] text-canvas/60 bg-canvas/5 px-2 py-0.5 rounded-full border border-border-dark">
             prod-cluster-01
           </span>
         </div>
@@ -124,13 +124,13 @@ export const ProjectPreviewMockup: React.FC<ProjectPreviewMockupProps> = ({ proj
           <div className="space-y-1.5 text-[11px]">
             <div className="flex items-center justify-between text-canvas/80">
               <span className="text-canvas">/v1/telemetry/events</span>
-              <span className="text-indigo-accent text-[10px]">POST</span>
+              <span className="text-blue-light text-[10px]">POST</span>
               <span className="text-lime-accent text-[10px]">200 OK</span>
               <span className="text-canvas/60">19ms</span>
             </div>
             <div className="flex items-center justify-between text-canvas/80">
               <span className="text-canvas">/v1/auth/session</span>
-              <span className="text-indigo-accent text-[10px]">GET</span>
+              <span className="text-blue-light text-[10px]">GET</span>
               <span className="text-lime-accent text-[10px]">200 OK</span>
               <span className="text-canvas/60">14ms</span>
             </div>

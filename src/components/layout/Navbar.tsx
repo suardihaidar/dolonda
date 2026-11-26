@@ -41,7 +41,7 @@ export const Navbar: React.FC = () => {
                   : 'smooth',
               });
             }}
-            className="group flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent rounded-sm py-1"
+            className="group flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent rounded-sm py-1"
             aria-label="Dolonda — Home"
           >
             <span className="font-heading text-2xl font-bold tracking-tight text-ink group-hover:text-ink/80 transition-colors">
@@ -58,7 +58,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-ink-muted hover:text-ink transition-colors relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent rounded-sm"
+                className="text-sm font-medium text-ink-muted hover:text-ink transition-colors relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent rounded-sm"
               >
                 {item.label}
               </a>
@@ -79,7 +79,7 @@ export const Navbar: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden relative z-50 p-2.5 rounded-lg text-ink hover:bg-canvas-subtle transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent"
+            className="md:hidden relative z-50 p-2.5 rounded-full text-ink hover:bg-canvas-subtle transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-navigation-menu"
             aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}

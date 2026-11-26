@@ -24,7 +24,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpen
             type="button"
             onClick={() => onOpen(project)}
             aria-label={`Open ${project.title} gallery`}
-            className="relative block h-full w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-accent"
+            className="relative block h-full w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-accent"
           >
             <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.015]">
               {project.previewImage ? (
@@ -55,10 +55,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpen
               {project.number} / {project.category}
             </span>
             <span
-              className={`shrink-0 border px-2.5 py-1 font-mono text-[11px] ${
+              className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] ${
                 project.badgeTone === 'commissioned'
                   ? 'border-lime-accent bg-lime-accent text-ink'
-                  : 'border-indigo-accent/30 text-indigo-accent'
+                  : 'border-blue-accent/30 text-blue-accent'
               }`}
             >
               {project.badgeLabel}
@@ -95,7 +95,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpen
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="border border-border-subtle bg-canvas px-2.5 py-1 font-mono text-[11px] text-ink-muted"
+                  className="rounded-full border border-border-subtle bg-canvas px-2.5 py-1 font-mono text-[11px] text-ink-muted"
                 >
                   {tech}
                 </span>
@@ -104,7 +104,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpen
             <button
               type="button"
               onClick={() => onOpen(project)}
-              className="inline-flex items-center gap-2 border-b border-ink pb-0.5 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:border-indigo-accent hover:text-indigo-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+              className="inline-flex items-center gap-2 border-b border-ink pb-0.5 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:border-blue-accent hover:text-blue-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas rounded-sm"
             >
               View gallery
               <span aria-hidden="true" className="text-ink-subtle">

@@ -59,7 +59,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }
               key={item.href}
               href={item.href}
               onClick={onClose}
-              className="flex items-center justify-between text-2xl font-heading font-medium text-ink hover:text-indigo-accent py-2 border-b border-border-subtle/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent rounded-sm"
+              className="flex items-center justify-between text-2xl font-heading font-medium text-ink hover:text-blue-accent py-2 border-b border-border-subtle/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent rounded-sm"
             >
               <span>{item.label}</span>
               <span className="font-mono text-xs text-ink-subtle">

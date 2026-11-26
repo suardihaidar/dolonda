@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
         <div className="flex flex-wrap items-center gap-6 pt-2">
           <a
             href="#work"
-            className="group inline-flex items-center gap-2.5 bg-ink text-canvas font-heading font-bold text-sm px-7 py-4 hover:bg-ink/85 transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-ink text-canvas font-heading font-bold text-sm px-7 py-4 hover:bg-ink/85 transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           >
             View Selected Work
             <svg
@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
 
           <a
             href="#contact"
-            className="font-body text-sm text-ink-muted underline underline-offset-4 decoration-border-subtle hover:text-ink hover:decoration-ink transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+            className="font-body text-sm text-ink-muted underline underline-offset-4 decoration-border-subtle hover:text-ink hover:decoration-ink transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas rounded-sm"
           >
             Let's Talk →
           </a>

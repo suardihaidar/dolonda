@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
             <a
               href="#home"
               onClick={scrollToTop}
-              className="group inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent rounded-sm py-1"
+              className="group inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent rounded-sm py-1"
               aria-label="Dolonda — Return to Top"
             >
               <span className="font-heading text-3xl font-bold tracking-tight text-ink group-hover:text-ink/80 transition-colors">
@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="font-body text-xs sm:text-sm font-medium text-ink-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent rounded-sm py-1"
+                  className="font-body text-xs sm:text-sm font-medium text-ink-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent rounded-sm py-1"
                 >
                   {link.label}
                 </a>
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
             <a
               href="#home"
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 font-mono text-xs text-ink-subtle hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent rounded-sm py-1"
+              className="inline-flex items-center gap-1.5 font-mono text-xs text-ink-subtle hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent rounded-sm py-1"
               aria-label="Back to top"
             >
               <span>Back to Top</span>
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
               href={contactDetails.githubPlaceholder}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent rounded-sm"
+              className="hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent rounded-sm"
             >
               GitHub ↗
             </a>
@@ -73,13 +73,13 @@ export const Footer: React.FC = () => {
               href={contactDetails.linkedinPlaceholder}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent rounded-sm"
+              className="hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent rounded-sm"
             >
               LinkedIn ↗
             </a>
             <a
               href={`mailto:${contactDetails.email}`}
-              className="hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent rounded-sm"
+              className="hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent rounded-sm"
             >
               Email ↗
             </a>

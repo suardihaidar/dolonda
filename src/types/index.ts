@@ -22,7 +22,6 @@ export interface Project {
   architectureNote: string;
   technologies: string[];
   previewImage?: string;
-  previewNote: string;
   gallery: ProjectShot[];
 }
 
@@ -44,6 +43,5 @@ export interface ContactInfo {
   whatsappPlaceholder: string;
   linkedinPlaceholder: string;
   githubPlaceholder: string;
-  availability: string;
   location: string;
 }

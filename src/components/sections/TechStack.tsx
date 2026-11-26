@@ -33,7 +33,7 @@ export const TechStack: React.FC = () => {
             }`}
           >
             {/* Pillar index */}
-            <span className="font-mono text-xs text-indigo-accent uppercase tracking-widest">
+            <span className="font-mono text-xs text-blue-accent uppercase tracking-widest">
               0{index + 1}
             </span>
 

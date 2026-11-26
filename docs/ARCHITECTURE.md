@@ -60,7 +60,7 @@ Dolonda is architected as a lightweight, high-performance, client-side Single-Pa
 | **Bundler & Tooling** | **Vite** | Next.js / Astro / Webpack | **Why Vite:** Lightning-fast HMR (<50ms), minimal configuration, pure static bundle generation (`dist/`). Next.js would introduce unnecessary Node.js server dependencies or SSG complexity for a single-page portfolio; Webpack is excessively slow and complex. |
 | **UI Library** | **React 18/19** | Vanilla JS / Svelte / Vue | **Why React:** Directly aligns with the founder's reactivation goals and core client service offering ("React development"). Allows modular component architecture and rich ecosystem. |
 | **Type System** | **TypeScript** | JavaScript (ESNext) | **Why TypeScript:** Catches edge cases at compile-time, documents component props organically, and enforces strict data shapes. Perfect for engineering credibility. |
-| **Styling** | **Tailwind CSS** | CSS Modules / Styled-Components | **Why Tailwind:** Rapid layout iteration, zero runtime JS overhead, atomic CSS deduplication in production, and simple customization of the editorial design tokens (Space Grotesk, Inter, JetBrains Mono, warm off-white, electric lime). |
+| **Styling** | **Tailwind CSS** | CSS Modules / Styled-Components | **Why Tailwind:** Rapid layout iteration, zero runtime JS overhead, atomic CSS deduplication in production, and simple customization of the editorial design tokens (Geist, Geist Mono, warm off-white, electric lime, blue). |
 | **Hosting & CI/CD** | **Cloudflare Pages** | Vercel / Netlify / AWS S3 | **Why Cloudflare:** Requirement from brief ("Do not use Vercel. I intend to deploy using Cloudflare Pages"). Superior global edge routing, unlimited bandwidth on free tier, zero vendor lock-in with static output. |
 
 ---
@@ -178,23 +178,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        canvas: '#F5F3EE',       // Warm off-white
+        canvas: {
+          DEFAULT: '#FCFAF5',   // Warm off-white
+          card: '#FFFFFF',      // Elevated surface (lighter than canvas)
+          subtle: '#F1EFE9',    // Recessed surface
+        },
         ink: {
           DEFAULT: '#202020',   // Charcoal
-          muted: '#555555',     // Secondary text
-          subtle: '#888888',    // Technical labels / borders
+          muted: '#52504C',     // Secondary text
+          subtle: '#6E6A63',    // Technical labels
         },
         lime: {
-          accent: '#C7F36B',    // Electric lime
+          accent: '#C7F36B',    // Electric lime — only accent legible on bg-ink
         },
-        indigo: {
-          accent: '#7067E8',    // Indigo accent
+        blue: {
+          accent: '#1D4ED8',    // Blue — links/labels on light surfaces
+          light: '#8FB0FF',     // Blue on dark surfaces
         },
       },
       fontFamily: {
-        heading: ['Space Grotesk', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        heading: ['Geist', 'sans-serif'],
+        body: ['Geist', 'sans-serif'],
+        mono: ['Geist Mono', 'monospace'],
       },
       maxWidth: {
         container: '1200px',
@@ -206,9 +211,10 @@ module.exports = {
 
 ### Font Loading Strategy
 Fonts are loaded using high-performance Google Font preconnects in `index.html` (or self-hosted web fonts in production) to avoid layout shift:
-- `Space Grotesk` (weights 500, 600, 700)
-- `Inter` (weights 400, 500)
-- `JetBrains Mono` (weights 400, 500)
+- `Geist` (weights 400, 500, 600, 700) — serves both display and body roles
+- `Geist Mono` (weights 400, 500)
+
+One grotesque for headings and body mirrors x.ai's structure; x.ai's own display face (XVF) is proprietary and cannot be licensed, so Geist is the open-source stand-in.
 
 ---
 

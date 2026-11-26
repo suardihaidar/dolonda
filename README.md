@@ -31,7 +31,7 @@ Dolonda bridges disciplined frontend engineering with creative problem-solving, 
 | **Language** | [TypeScript](https://www.typescriptlang.org/) | Strict type checking & interfaces |
 | **Build Tool** | [Vite](https://vitejs.dev/) | Instant HMR and optimized static rollup bundling |
 | **Styling** | [Tailwind CSS](https://tailwindcss.com/) | Custom editorial design system tokens |
-| **Typography** | Space Grotesk, Inter, JetBrains Mono | Editorial typography hierarchy |
+| **Typography** | Geist, Geist Mono | Editorial typography hierarchy |
 | **Deployment** | [Cloudflare Pages](https://pages.cloudflare.com/) | Global edge CDN static hosting |
 
 ---

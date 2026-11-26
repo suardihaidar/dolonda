@@ -101,18 +101,17 @@ Avoid generic portfolio templates, excessive gradients, unnecessary glassmorphis
 
 ### Color palette
 
-- Warm off-white: #F5F3EE
+- Warm off-white: #FCFAF5
 - Charcoal: #202020
 - Electric lime: #C7F36B
-- Indigo: #7067E8
+- Blue: #1D4ED8 (interactive accent on light surfaces; #8FB0FF on dark)
 
 Use the colors thoughtfully. The primary experience should remain clean and readable.
 
 ### Typography
 
-- Space Grotesk: headings.
-- Inter: body text.
-- JetBrains Mono: technical labels and small details.
+- Geist: headings and body text (one family, hierarchy via size/weight/tracking).
+- Geist Mono: technical labels and small details.
 
 Use expressive typography, strong visual hierarchy, generous whitespace, and editorial-style layouts.
 
@@ -122,7 +121,7 @@ Use expressive typography, strong visual hierarchy, generous whitespace, and edi
 - Asymmetric layouts where appropriate.
 - Interesting project presentation.
 - Clean navigation.
-- Rounded project previews.
+- Square-framed project previews (radius is reserved for buttons and controls).
 - Subtle hover interactions.
 - Restrained animations.
 - Strong mobile experience.

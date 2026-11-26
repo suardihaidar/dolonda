@@ -5,6 +5,42 @@ Commit messages serve as the primary identifiers for each recorded entry.
 
 ---
 
+## [0.5.0] — 2026-11-26
+
+### Design System — Typography, Radius, Palette & Dead Code
+
+All of the following landed in one unreleased batch; nothing was pushed between them, so they share a single version.
+
+- **`refactor(design-system): adopt Geist and unify corner radius scale`**
+  - **Typography:** Replaced the three-family stack (Space Grotesk / Inter / JetBrains Mono) with **Geist** for both display and body, plus **Geist Mono** for technical text. This mirrors x.ai's structure — one grotesque for headings *and* body, one mono for metadata. x.ai's own display face (XVF, variable 200–800) is proprietary and cannot be licensed, so Geist is the open-source substitute; both Geist families are served by Google Fonts.
+  - **Consequence:** Hierarchy is now carried entirely by size, weight, and tracking rather than by switching typefaces. The `tracking-tight` and `leading-[0.95]` discipline becomes load-bearing.
+  - **Radius:** Collapsed 6 ad-hoc radius values into a closed four-step scale (§4.3). All CTAs now use `rounded-full` (hero, navbar, mobile drawer, Contact email + WhatsApp) — previously hero and Contact were sharp while the nav CTA was a pill. Hamburger moved `rounded-lg` → `rounded-full`; mockup outer frames dropped `rounded-2xl` → square (they sat inside square frames, leaving visible corner gaps); mockup status dot `rounded-sm` → `rounded-full`; mockup chip `rounded` → `rounded-md`.
+  - **Changes:** `tailwind.config.js` (fontFamily), `index.html` (Google Fonts URL), `styles/index.css` (base family + heading + mono rules), `sections/Hero.tsx`, `sections/Contact.tsx`, `layout/Navbar.tsx`, `ui/ProjectPreviewMockup.tsx`. Docs updated: `AGENTS.md`, `DESIGN_SYSTEM.md` (new §4.3 + corrected component specs), `ARCHITECTURE.md`, `PROJECT_BRIEF.md`, `PRD.md`, `ANTI_SLOP_GUIDELINES.md`, `README.md`.
+
+- **`refactor(theme): brighten canvas, lift cards to white, replace indigo with blue`**
+  - **Why:** telli.com's palette was extracted (OKLCH tokens) and found to be structurally near-identical to Dolonda's — same warm-cream canvas, same near-black ink, same hairline borders. The one meaningful gap: their accent (`#004FE1`) passes AA for body text at 6.28:1, while Dolonda's indigo stopped at 3.95:1 and could only be used at large sizes.
+  - **Surfaces:** `canvas` `#F5F3EE` → `#FCFAF5`; `canvas-card` `#FAF9F5` → `#FFFFFF`; `canvas-subtle` `#EFECE4` → `#F1EFE9`. The card lift to pure white was required — the brighter canvas (L .957) would otherwise have left the card (L .947) *darker* than the page, inverting elevation.
+  - **Accent:** `indigo` token renamed to `blue` — keeping the name "indigo" on a blue value would have been a lasting lie. `blue-accent` `#1D4ED8` (6.4:1 on canvas) for light surfaces; `blue-light` `#8FB0FF` (7.6:1 on ink) for dark surfaces. All 27 `indigo-accent` usages migrated.
+  - **Lime retained:** `#C7F36B` stays as the brand signature and is the *only* accent legible on `bg-ink` (12.8:1). The telli blue fails there (2.4:1), so swapping it out would have left the dark Contact panel and the dark SaaS mockup without a readable accent. The two accents now have distinct, non-overlapping jobs.
+  - **Dark-surface fix:** the two `POST`/`GET` labels inside the dark mockup panel moved to `blue-light` — the deeper `blue-accent` would have dropped to 1.83:1 on that panel.
+
+- **`refactor(ui): remove dead code and square text-link focus rings`**
+  - **Dead code removed:** `ui/SectionHeading.tsx` deleted — it was never imported anywhere (0 references); its two accent colours had been migrated in the palette pass, which was the only change keeping it alive. `Project.previewNote` and `ContactInfo.availability` removed from the types and their data files — both were populated in `src/data/` but never rendered. `lime.light` token removed — never referenced.
+  - **Radius finding (better-ui skill):** a review against the concentric-radius rule surfaced the actual inconsistency — nine text links carried `rounded-sm` on their focus ring while five identical ones had no radius at all, so focus rings were inconsistently square vs rounded across the page. All text-link focus wrappers now use `rounded-sm`, matching §4.3. The one deliberate exception is the full-bleed media button in `ProjectCard` (`ring-inset` inside a square frame), which correctly stays square.
+  - **Not a finding:** `rounded-full` buttons with padding and `rounded-xl` mockup panels with padding are not concentric violations — they are outermost surfaces, with no nested radius inside them.
+  - **Changes:** deleted `ui/SectionHeading.tsx`; `types/index.ts`, `data/projects.ts`, `data/contact.ts`, `tailwind.config.js`; focus rings in `sections/Hero.tsx`, `sections/Services.tsx`, `sections/Contact.tsx`, `ui/ProjectCard.tsx`.
+
+- **`style(work): render all badges as pills`**
+  - **Details:** with the project status badge now a pill, the remaining square chips (tech tags, service deliverable tags, the mockup cluster chip) were the last elements at the same visual weight with mismatched corners. All badges, chips and tags are now `rounded-full`, matching the button treatment. Tech tags and deliverable tags keep their hairline outline; only the shape changed.
+  - **Design system:** §4.3 rewritten around one rule — *anything that reads as a badge, chip, tag or pill is `rounded-full`, with no exceptions*. `rounded-md` is gone from the scale entirely (3 values remaining: `full`, `xl`, `sm`); the "one shape for badges" rule is now explicit so the earlier square-vs-pill split cannot return. §5.2, §5.3 and §5.4 updated to match.
+  - **Agent rules:** `AGENTS.md` now carries the radius scale in its Styling & CSS section (it had colours and typography but no radius rule at all, which is how the drift happened). States the three values, that badges are always pills, and that structural surfaces stay square.
+  - **Precedence:** this supersedes the previous "static metadata chips stay square to preserve the editorial grid" note. Badges are uniform; only structural surfaces (section frames, cards, image frames) stay square.
+  - **Changes:** `ui/ProjectCard.tsx` (tech tags, status badge), `sections/Services.tsx` (deliverable tags), `ui/ProjectPreviewMockup.tsx` (cluster chip); `DESIGN_SYSTEM.md` §4.3 + §5.2/5.3/5.4.
+  - **Verified:** browser screenshots at 1440px confirm tech pills, deliverable pills and both status tones; true-375px render (via fixed-width iframe) confirms the pills wrap cleanly with **no horizontal overflow** (`scrollWidth === clientWidth === 375`).
+  - **Verified (whole batch):** 0 TypeScript errors · clean build · 32 modules · 57.71 kB gzip JS · 5.32 kB gzip CSS.
+
+- **Release:** `package.json` and `package-lock.json` bumped `0.4.1` → `0.5.0` (single bump for the whole batch).
+
 ## [0.4.1] — 2026-11-26
 
 ### Gallery — Image Loading State

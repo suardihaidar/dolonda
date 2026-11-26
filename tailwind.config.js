@@ -8,9 +8,9 @@ export default {
     extend: {
       colors: {
         canvas: {
-          DEFAULT: '#F5F3EE', // Warm off-white primary canvas
-          card: '#FAF9F5',    // Slightly elevated surface
-          subtle: '#EFECE4',  // Hairline surface contrast
+          DEFAULT: '#FCFAF5', // Warm off-white primary canvas
+          card: '#FFFFFF',    // Elevated surface — must stay lighter than canvas
+          subtle: '#F1EFE9',  // Recessed surface contrast
         },
         ink: {
           DEFAULT: '#202020', // Deep charcoal typography & dark surfaces
@@ -18,12 +18,11 @@ export default {
           subtle: '#6E6A63',  // Technical metadata & secondary labels (WCAG AA on canvas)
         },
         lime: {
-          accent: '#C7F36B', // Electric lime — surgical focal accent
-          light: '#D8F88F',
+          accent: '#C7F36B', // Electric lime — the only accent legible on bg-ink
         },
-        indigo: {
-          accent: '#7067E8', // Indigo — technical tags & architecture labels
-          light: '#8C84F0',
+        blue: {
+          accent: '#1D4ED8', // Blue — links, labels, buttons on light surfaces (6.4:1)
+          light: '#8FB0FF',  // Blue for dark surfaces (7.6:1 on ink)
         },
         border: {
           subtle: '#E2DFD8', // Hairline 1px borders
@@ -31,9 +30,9 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['"Space Grotesk"', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        heading: ['Geist', 'sans-serif'],
+        body: ['Geist', 'sans-serif'],
+        mono: ['"Geist Mono"', 'monospace'],
       },
       letterSpacing: {
         tightest: '-0.04em',

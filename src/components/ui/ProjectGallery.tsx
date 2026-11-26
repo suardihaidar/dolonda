@@ -157,7 +157,7 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ project, onClose
             type="button"
             onClick={onClose}
             aria-label="Close gallery"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border-subtle bg-canvas/80 text-ink backdrop-blur transition-colors hover:bg-ink hover:text-canvas focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border-subtle bg-canvas/80 text-ink backdrop-blur transition-colors hover:bg-ink hover:text-canvas focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -184,7 +184,7 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ project, onClose
                 type="button"
                 onClick={() => goTo(index - 1)}
                 aria-label="Previous screenshot"
-                className="absolute left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border-subtle bg-canvas/85 text-ink shadow-sm backdrop-blur transition-colors hover:bg-ink hover:text-canvas focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent"
+                className="absolute left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border-subtle bg-canvas/85 text-ink shadow-sm backdrop-blur transition-colors hover:bg-ink hover:text-canvas focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -194,7 +194,7 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ project, onClose
                 type="button"
                 onClick={() => goTo(index + 1)}
                 aria-label="Next screenshot"
-                className="absolute right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border-subtle bg-canvas/85 text-ink shadow-sm backdrop-blur transition-colors hover:bg-ink hover:text-canvas focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent"
+                className="absolute right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border-subtle bg-canvas/85 text-ink shadow-sm backdrop-blur transition-colors hover:bg-ink hover:text-canvas focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -224,7 +224,7 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ project, onClose
                 onClick={() => goTo(itemIndex)}
                 aria-label={`Show ${item.label}`}
                 aria-current={itemIndex === index ? 'true' : undefined}
-                className="flex h-8 w-8 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent"
+                className="flex h-8 w-8 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent"
               >
                 <span
                   aria-hidden="true"

@@ -68,14 +68,21 @@ When interacting with this codebase and the founder, you operate in three concur
 
 ### Styling & CSS (Tailwind CSS)
 - Use semantic color tokens defined in `tailwind.config.js` or CSS variables matching the design system:
-  - Background: Warm off-white (`#F5F3EE`)
+  - Background: Warm off-white (`#FCFAF5`)
+  - Elevated surface: Pure white (`#FFFFFF`) — must stay lighter than the canvas
   - Typography/Contrast: Charcoal (`#202020`)
-  - Accent / Highlight: Electric lime (`#C7F36B`)
-  - Secondary Accent: Indigo (`#7067E8`)
+  - Accent / Highlight: Electric lime (`#C7F36B`) — the only accent legible on `bg-ink`
+  - Interactive accent: Blue (`#1D4ED8`, light: `#8FB0FF`) — links, labels, tags on light surfaces
 - Typography mapping:
-  - Headings: `Space Grotesk`, sans-serif
-  - Body: `Inter`, sans-serif
-  - Accents/Mono: `JetBrains Mono`, monospace
+  - Headings: `Geist`, sans-serif
+  - Body: `Geist`, sans-serif
+  - Accents/Mono: `Geist Mono`, monospace
+  - Reference: mirrors x.ai's one-grotesque + mono structure (x.ai uses its proprietary XVF, which cannot be licensed — Geist is the open-source substitute).
+- Border radius: a closed three-value scale — do not introduce others (`rounded`, `rounded-md`, `rounded-lg`, `rounded-2xl`, `rounded-3xl` are not part of the system).
+  - `rounded-full` — **every badge, chip, tag and pill** (status badges, tech tags, deliverable tags, mockup chips), plus all buttons/CTAs, icon-only buttons, dots, progress indicators.
+  - `rounded-xl` — nested panels inside a larger surface (mockup metric cards, terminal panels).
+  - `rounded-sm` — focus-ring wrappers on plain text links only.
+  - **Badges are always pills.** One badge shape everywhere; it mirrors the always-pill button treatment. Structural surfaces (section frames, project cards, image frames, dividers) stay square — rounding is never used for decoration.
 - Layout discipline: Mobile-first responsive classes (`sm:`, `md:`, `lg:`, `xl:`), strict container padding, no horizontal overflow (`overflow-x-hidden` safeguard on body/main, no unconstrained widths).
 - Accessibility: Focus visible states on all interactive elements (`focus-visible:ring-2`), WCAG AA contrast compliance, respect `prefers-reduced-motion`.
 
