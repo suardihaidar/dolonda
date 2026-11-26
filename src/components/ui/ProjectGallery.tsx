@@ -7,6 +7,42 @@ interface ProjectGalleryProps {
   onClose: () => void;
 }
 
+const GalleryImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    // A cached image can finish before React attaches onLoad.
+    if (imgRef.current?.complete) setLoaded(true);
+  }, []);
+
+  return (
+    <>
+      {!loaded && (
+        <div
+          role="status"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-canvas-subtle"
+        >
+          <span className="font-mono text-[10px] uppercase tracking-widest text-ink-subtle">
+            Loading image
+          </span>
+          <span className="h-px w-10 animate-pulse bg-ink/30" />
+        </div>
+      )}
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        decoding="async"
+        onLoad={() => setLoaded(true)}
+        className={`h-full w-full object-contain transition-opacity duration-300 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+    </>
+  );
+};
+
 const ShotPlaceholder: React.FC<{ projectTitle: string; shot: ProjectShot; index: number }> = ({
   projectTitle,
   shot,
@@ -130,15 +166,9 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ project, onClose
         </div>
 
         <div className="relative min-h-0 flex-1">
-          <div className="h-full w-full overflow-hidden border border-border-subtle bg-canvas-subtle">
+          <div className="relative h-full w-full overflow-hidden border border-border-subtle bg-canvas-subtle">
             {shot.src ? (
-              <img
-                key={shot.src}
-                src={shot.src}
-                alt={shot.label}
-                decoding="async"
-                className="h-full w-full object-contain"
-              />
+              <GalleryImage key={index} src={shot.src} alt={shot.label} />
             ) : shot.mockup ? (
               <div className="h-full w-full p-4 sm:p-8">
                 <ProjectPreviewMockup projectId={project.id} />

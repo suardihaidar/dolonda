@@ -5,6 +5,18 @@ Commit messages serve as the primary identifiers for each recorded entry.
 
 ---
 
+## [0.4.1] — 2026-11-26
+
+### Gallery — Image Loading State
+
+- **`fix(work): show loading state while gallery screenshots decode`**
+  - **Details:** Navigating the gallery swapped the image with no feedback, so a slow network showed an empty frame. Each screenshot now renders a small mono "Loading image" status with a pulsing hairline, then fades in over 300 ms once decoded.
+  - **Correctness details:** Each slide is keyed by index, so the state resets per image; a cached image is detected via `img.complete` on mount so the indicator never flashes on repeat views; the status uses `role="status"` for assistive tech; `prefers-reduced-motion` already collapses the fade through the global CSS rule.
+  - **Changes:** `ui/ProjectGallery.tsx` — new internal `GalleryImage` component; stage wrapper set to `relative` to anchor the overlay.
+  - **Verified:** 0 TypeScript errors · clean build · 57.77 kB gzip JS · 5.37 kB gzip CSS.
+
+- **Release:** `package.json` and `package-lock.json` bumped `0.4.0` → `0.4.1`.
+
 ## [0.4.0] — 2026-11-26
 
 ### Selected Work — Screenshot Gallery & Founder Nickname
