@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { projects } from '../../data/projects';
+import { Project } from '../../types';
 import { ProjectCard } from '../ui/ProjectCard';
+import { ProjectGallery } from '../ui/ProjectGallery';
 
 export const SelectedWork: React.FC = () => {
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
+
+  const closeGallery = useCallback(() => setActiveProject(null), []);
+
   return (
     <section
       id="work"
@@ -26,15 +32,23 @@ export const SelectedWork: React.FC = () => {
       {/* Projects — full-bleed editorial layout, not a card grid */}
       <div className="space-y-16 sm:space-y-20">
         {projects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
+          <ProjectCard key={project.id} project={project} index={index} onOpen={setActiveProject} />
         ))}
       </div>
 
       {/* Authenticity footnote — inline text, not a banner card */}
       <p className="mt-12 font-mono text-xs text-ink-subtle border-t border-border-subtle pt-6">
         Concept studies are self-initiated explorations of technical architecture and responsive
-        discipline, not commissioned client work. — Suardi, {new Date().getFullYear()}
+        discipline, not commissioned client work. — Ardi, {new Date().getFullYear()}
       </p>
+
+      {activeProject && (
+        <ProjectGallery
+          key={activeProject.id}
+          project={activeProject}
+          onClose={closeGallery}
+        />
+      )}
     </section>
   );
 };

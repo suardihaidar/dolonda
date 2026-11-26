@@ -78,7 +78,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }
             Let's Talk
           </a>
           <p className="font-mono text-xs text-center text-ink-subtle pt-2">
-            Independent Creative Developer · Suardi
+            Independent Creative Developer · Ardi
           </p>
         </div>
       </div>

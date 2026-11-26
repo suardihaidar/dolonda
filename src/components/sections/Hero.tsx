@@ -9,7 +9,7 @@ export const Hero: React.FC = () => {
     >
       {/* Micro-masthead — hairline row of geographic & identity metadata */}
       <div className="mb-12 sm:mb-16 flex items-center gap-3 font-mono text-xs tracking-widest uppercase text-ink-subtle border-b border-border-subtle pb-5">
-        <span className="text-ink font-semibold">Suardi</span>
+        <span className="text-ink font-semibold">Ardi</span>
         <span className="text-border-subtle">·</span>
         <span>Indonesia · GMT+7</span>
         <span className="text-border-subtle hidden sm:inline">·</span>
@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
 
         {/* Concise, honest bio */}
         <p className="font-body text-ink-muted text-lg sm:text-xl leading-relaxed max-w-2xl">
-          I'm <span className="text-ink font-medium">Suardi</span> — an independent creative developer
+          I'm <span className="text-ink font-medium">Ardi</span> — an independent creative developer
           with over seven years of software engineering experience. I build responsive, production-ready
           websites and web applications where clean architecture meets meticulous visual craft.
         </p>

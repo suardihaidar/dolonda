@@ -5,7 +5,7 @@ export const About: React.FC = () => {
     <section
       id="about"
       className="py-24 sm:py-32 px-6 sm:px-8 md:px-12 max-w-container mx-auto w-full border-t border-border-subtle"
-      aria-label="About Suardi & Dolonda"
+      aria-label="About Ardi & Dolonda"
     >
       {/* Section label */}
       <span className="font-mono text-xs text-ink-subtle uppercase tracking-widest block mb-16">
@@ -23,7 +23,7 @@ export const About: React.FC = () => {
               and trustworthy the interface feels."
             </p>
             <footer className="font-mono text-xs text-ink-subtle">
-              — Suardi, Founder of Dolonda
+              — Ardi, Founder of Dolonda
             </footer>
           </blockquote>
 
@@ -51,7 +51,7 @@ export const About: React.FC = () => {
         {/* Right — Founder essay narrative */}
         <div className="lg:col-span-7 space-y-6 font-body text-base text-ink-muted leading-relaxed">
           <p>
-            I'm Suardi — a software engineer turned independent creative developer, working from
+            I'm Ardi (Suardi) — a software engineer turned independent creative developer, working from
             Indonesia under the name <span className="text-ink font-medium">Dolonda</span>. After more
             than seven years writing production software, I returned to what drew me to this discipline
             in the first place: the intersection of engineering rigour and thoughtful visual craft.

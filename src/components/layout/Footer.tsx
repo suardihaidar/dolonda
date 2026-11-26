@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               </span>
             </a>
             <p className="font-body text-sm sm:text-base text-ink-muted leading-relaxed">
-              Building thoughtful digital experiences. Founder-led creative development by Suardi.
+              Building thoughtful digital experiences. Founder-led creative development by Ardi.
             </p>
           </div>
 

@@ -3,6 +3,13 @@ export interface NavItem {
   href: string;
 }
 
+export interface ProjectShot {
+  label: string;
+  caption?: string;
+  src?: string;
+  mockup?: boolean;
+}
+
 export interface Project {
   id: string;
   number: string;
@@ -16,6 +23,7 @@ export interface Project {
   technologies: string[];
   previewImage?: string;
   previewNote: string;
+  gallery: ProjectShot[];
 }
 
 export interface ServiceItem {

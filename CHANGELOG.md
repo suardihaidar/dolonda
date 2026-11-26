@@ -5,6 +5,27 @@ Commit messages serve as the primary identifiers for each recorded entry.
 
 ---
 
+## [0.4.0] — 2026-11-26
+
+### Selected Work — Screenshot Gallery & Founder Nickname
+
+- **`feat(work): add project screenshot gallery and use Ardi across the interface`**
+  - **Details:** Project previews were static — the only way to see the product was the single image inside the card. Clicking a preview (or its "View gallery" link) now opens a full-screen gallery over a blurred canvas: a centred media frame with previous/next controls, dot indicators, per-screen captions, `←`/`→` keyboard support, `Escape`/backdrop close, focus trapping, and body scroll lock. The Selected Work section itself remains the asymmetric editorial grid from 0.3.0; the carousel exists only inside the gallery.
+  - **Screenshots:** Replaced the single composite collage with seven real POS captures — checkout, cash payment, receipt success, shift gate, product management, daily reports, and store settings/receipt preview. Captions describe only what each screen shows; the previous placeholder slides are gone.
+  - **Assets:** Converted the source PNGs (3024×1964, ~3.05 MB total) to 2000px-wide WebP at quality 90 — **487 kB total, an 84% reduction** — and verified text remains crisp. `previewImage` now uses `lorongsatu21-1.webp`; the old collage and source PNGs were removed.
+  - **Naming:** Visible copy now uses **Ardi** (hero masthead and intro, About aria-label/signature/essay, Selected Work footnote, footer, mobile menu, WhatsApp greeting). SEO descriptions read **"Suardi (Ardi)"**, and the About essay opens with "I'm Ardi (Suardi)" to keep the full name discoverable. LinkedIn/GitHub profile URLs are unchanged.
+  - **Project list:** Removed the SaaS Analytics Dashboard concept, leaving Lorongsatu 21 (`01`) and Bali Villa (`02`).
+  - **Changes:**
+    - **`types/index.ts`** — added `ProjectShot` (`label`, optional `caption`/`src`/`mockup`) and `Project.gallery`.
+    - **`data/projects.ts`** — added gallery entries for all projects; switched Lorongsatu preview and gallery sources to WebP.
+    - **`ui/ProjectGallery.tsx`** (new) — dialog with arrow/dot navigation, captions, keyboard handlers, Tab trap, focus restore, and scroll lock; CSS-mockup and placeholder branches for concept studies and pending captures.
+    - **`ui/ProjectCard.tsx`** — media is a gallery trigger; restored `lg:col-span-5` on the text column; preview centred with `object-contain object-center`; gallery link moved to its own footer line.
+    - **`sections/SelectedWork.tsx`** — owns the active-project state and renders the gallery.
+  - **Known limitation:** `ProjectPreviewMockup` still contains the SaaS telemetry fallback branch, now unreachable since Bali Villa is the only mockup-backed project.
+  - **Verified:** 0 TypeScript errors · clean build · 57.62 kB gzip JS · 5.30 kB gzip CSS.
+
+- **Release:** `package.json` bumped `0.3.0` → `0.4.0`; `package-lock.json` synced from a stale `0.2.1` to `0.4.0`.
+
 ## [0.3.0] — 2026-11-26
 
 ### Selected Work — First Commissioned Case Study & Asymmetric Showcase Grid

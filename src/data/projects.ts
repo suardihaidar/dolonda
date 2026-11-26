@@ -21,8 +21,46 @@ export const projects: Project[] = [
       'Tailwind CSS',
       'Zustand',
     ],
-    previewImage: '/work/lorongsatu21-collage.webp',
+    previewImage: '/work/lorongsatu21-1.webp',
     previewNote: 'Commissioned client work — pilot deployment',
+    gallery: [
+      {
+        label: 'Kasir / Checkout',
+        caption:
+          'Product grid, stock badges, and category filters built for fast, keyboard-driven lookup.',
+        src: '/work/lorongsatu21-1.webp',
+      },
+      {
+        label: 'Pembayaran Tunai',
+        caption: 'Cash payment with quick-amount keys and live change calculation.',
+        src: '/work/lorongsatu21-3.webp',
+      },
+      {
+        label: 'Pembayaran Berhasil',
+        caption: 'Receipt preview and print step — the sale is already committed locally.',
+        src: '/work/lorongsatu21-4.webp',
+      },
+      {
+        label: 'Shift Gate',
+        caption: 'The register stays locked until an opening shift is recorded.',
+        src: '/work/lorongsatu21-2.webp',
+      },
+      {
+        label: 'Manajemen Produk',
+        caption: 'Inventory table with low-stock alerts, CSV import, and inline editing.',
+        src: '/work/lorongsatu21-5.webp',
+      },
+      {
+        label: 'Laporan & Analitik',
+        caption: 'Daily sales, expenses, and estimated profit read from the local database.',
+        src: '/work/lorongsatu21-6.webp',
+      },
+      {
+        label: 'Pengaturan & Struk',
+        caption: 'Store profile and receipt footer with a live preview of the printed output.',
+        src: '/work/lorongsatu21-7.webp',
+      },
+    ],
   },
   {
     id: 'bali-villa',
@@ -38,20 +76,20 @@ export const projects: Project[] = [
       'Built on a mobile-first grid that scales from a single-column portrait view to a full editorial spread at viewport widths above 1024px. Reservation touchpoints are contextually placed rather than globally repeated — every CTA earns its position in the layout.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
     previewNote: 'Concept Project — Not commissioned client work',
-  },
-  {
-    id: 'saas-dashboard',
-    number: '03',
-    title: 'SaaS Analytics Dashboard',
-    category: 'Web Application Interface',
-    badgeLabel: 'Concept Study',
-    badgeTone: 'concept',
-    description:
-      'A dense data-rich interface for software teams that relies on information hierarchy rather than decorative chrome. Metrics are readable at a glance; complexity is organised, not hidden.',
-    role: 'Frontend Architecture & UI Engineering',
-    architectureNote:
-      'Component architecture uses strict TypeScript interfaces for every data shape. Layout adapts from a stacked single-column mobile view to a 12-column CSS grid desktop layout. No third-party charting library — data visualisation is achieved through native CSS proportional bars, keeping the bundle lightweight.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    previewNote: 'Concept Project — Not commissioned client work',
+    gallery: [
+      {
+        label: 'Hero & Navigation',
+        mockup: true,
+        caption: 'Editorial hero with one contextual booking action instead of a repeated global CTA.',
+      },
+      {
+        label: 'Villa Detail',
+        caption: 'Accommodation detail with rate, capacity, and booking context in a single reading column.',
+      },
+      {
+        label: 'Enquiry Flow',
+        caption: 'Mobile-first reservation enquiry that keeps the visitor inside the page.',
+      },
+    ],
   },
 ];
