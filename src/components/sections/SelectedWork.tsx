@@ -7,7 +7,7 @@ export const SelectedWork: React.FC = () => {
     <section
       id="work"
       className="py-24 sm:py-32 px-6 sm:px-8 md:px-12 max-w-container mx-auto w-full border-t border-border-subtle"
-      aria-label="Selected Work & Concept Projects"
+      aria-label="Selected Work"
     >
       {/* Section header — editorial label format */}
       <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-16">
@@ -18,7 +18,8 @@ export const SelectedWork: React.FC = () => {
           </h2>
         </div>
         <p className="font-body text-sm text-ink-muted max-w-sm leading-relaxed">
-          Explorations in frontend architecture, design-to-code craft, and responsive user experience.
+          Client work and concept studies — frontend architecture, design-to-code craft, and
+          responsive user experience.
         </p>
       </div>
 
@@ -31,8 +32,8 @@ export const SelectedWork: React.FC = () => {
 
       {/* Authenticity footnote — inline text, not a banner card */}
       <p className="mt-12 font-mono text-xs text-ink-subtle border-t border-border-subtle pt-6">
-        These are self-initiated concept studies demonstrating technical architecture and responsive discipline.
-        Not commissioned client work. — Suardi, {new Date().getFullYear()}
+        Concept studies are self-initiated explorations of technical architecture and responsive
+        discipline, not commissioned client work. — Suardi, {new Date().getFullYear()}
       </p>
     </section>
   );

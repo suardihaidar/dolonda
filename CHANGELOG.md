@@ -5,6 +5,24 @@ Commit messages serve as the primary identifiers for each recorded entry.
 
 ---
 
+## [0.3.0] — 2026-11-26
+
+### Selected Work — First Commissioned Case Study & Asymmetric Showcase Grid
+
+- **`feat(work): add Lorongsatu 21 POS and rebuild Selected Work as an asymmetric showcase grid`**
+  - **Details:** The portfolio only contained two self-initiated concept studies, with no evidence of shipped client software. Lorongsatu 21 POS — an offline-first Electron retail POS built for a retail store — became project `01`, pushing the concept studies to `02` and `03`. The section was rebuilt in the same pass: it previously paired a single landscape screenshot with a wall of prose, which forced `object-cover` to discard ~40% of the image's width. Media now takes 7 of 12 columns with a composited portrait collage, alternating sides per card.
+  - **Honesty corrections:** The section intro and authenticity footnote both previously asserted that *everything* on the page was concept work — a false claim once commissioned work was listed. The footnote is now scoped to concept studies only. All POS claims are scoped to **pilot deployment**, since the app is not yet in daily production use at the store.
+  - **Changes:**
+    - **`data/projects.ts`** — added `lorongsatu21-pos` (Client Work, Electron/React/TypeScript/SQLite/Tailwind/Zustand) with case-study copy describing the strict main/renderer IPC boundary, integer-cent money storage, and the blind shift-close count; renumbered `bali-villa` → `02` and `saas-dashboard` → `03`.
+    - **`types/index.ts`** — replaced the boolean `isConcept` with `badgeLabel` + `badgeTone` (`'concept' | 'commissioned'`) so badges are data-driven rather than hardcoded; added optional `previewImage`; dropped the unused `liveUrlPlaceholder` / `repoUrlPlaceholder` fields.
+    - **`ProjectCard.tsx`** — `grid-cols-12` with `lg:col-span-7` media and `lg:col-span-5` text; `lg:order-1/2` alternates which side the media sits on. Commissioned badges take a lime fill with charcoal text (`#C7F36B` / `#202020`, ~13:1) instead of lime text on the warm canvas, which would have failed WCAG AA. Cards without a `previewImage` fall back to the code-rendered mockup.
+    - **`SelectedWork.tsx`** — intro copy now reads "Client work and concept studies"; footnote scoped to concept work only; `aria-label` narrowed from "Selected Work & Concept Projects".
+    - **`public/work/lorongsatu21-collage.webp`** — two real in-store screenshots (point-of-sale, reports dashboard) trimmed of the macOS window bezel (top 66px) and composited into one portrait collage: POS in front, reports floating over its lower edge so it covers only repetitive product rows while leaving the cart totals visible. Composed at ratio **0.8339** against the media cell's **0.796–0.834**, on a shared `#EFECE4` tint so residual letterboxing is invisible. 60 kB.
+  - **The geometry, precisely:** the media cell measures 666×837 (ratio 0.796) at desktop while a landscape screenshot is 1.593, so `object-cover` scaled it 1.68× and discarded ~40% of the width — the reported truncation. Compositing into a portrait canvas at the cell's own ratio removes the mismatch rather than hiding it, and `object-contain` guarantees no future crop.
+  - **Deliberately rejected from the reference layout:** filter tabs (3 projects cannot justify tab UI), centred heading with eyebrow chip, indigo wash at scale, and uniform soft-shadowed card grids — all banned by `docs/ANTI_SLOP_GUIDELINES.md`.
+  - **Known limitation:** only project `01` has real artwork. Bali Villa and SaaS Dashboard remain CSS mockups whose height is driven by their text column, so the three cards do not share a media height.
+  - **Verified:** 0 TypeScript errors · clean build · 56.05 kB gzip JS · 4.99 kB gzip CSS. Measured at 1440 / 1280 / 834 / 390px: `scrollWidth === clientWidth` (no horizontal overflow) at every breakpoint; mobile cell ratio 0.834 vs natural 0.834 (0.002% deviation).
+
 ## [0.2.2] — 2026-11-26
 
 ### Navigation Scroll Behaviour & Contact Details

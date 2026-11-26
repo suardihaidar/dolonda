@@ -8,13 +8,13 @@ export interface Project {
   number: string;
   title: string;
   category: string;
-  isConcept: boolean;
+  badgeLabel: string;
+  badgeTone: 'concept' | 'commissioned';
   description: string;
   role: string;
   architectureNote: string;
   technologies: string[];
-  liveUrlPlaceholder?: string;
-  repoUrlPlaceholder?: string;
+  previewImage?: string;
   previewNote: string;
 }
 
