@@ -27,7 +27,20 @@ export const Navbar: React.FC = () => {
         <div className="max-w-container mx-auto px-6 sm:px-8 md:px-12 h-20 flex items-center justify-between">
           {/* Brand Wordmark */}
           <a
-            href="#home"
+            href="/"
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+              e.preventDefault();
+              if (window.location.hash) {
+                window.history.replaceState(null, '', window.location.pathname);
+              }
+              window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+                  ? 'auto'
+                  : 'smooth',
+              });
+            }}
             className="group flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-accent rounded-sm py-1"
             aria-label="Dolonda — Home"
           >
